@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">Grasshopper Report</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Aug. 31, 2023 12:38:11 p.m.</span></a>
+<a href="#"><span class="badge badge-primary">Sep. 1, 2023 04:49:55 p.m.</span></a>
 </li>
 </ul>
 </div>
@@ -52,6 +52,11 @@
 <span class="ico"><i class="fa fa-list"></i></span>
 </a>
 </li>
+<li class="nav-item dropdown" onclick="toggleView('category-view')">
+<a id="nav-category" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-tag"></i></span>
+</a>
+</li>
 </ul>
 </div>
 </div>      <div class="vcontainer">
@@ -61,13 +66,13 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Aug. 31, 2023 12:38:11 p.m.</h3>
+<h3>Sep. 1, 2023 04:49:55 p.m.</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Aug. 31, 2023 12:38:44 p.m.</h3>
+<h3>Sep. 1, 2023 04:50:16 p.m.</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -157,10 +162,27 @@
 </div></div>
 <script>
 var timeline = {
-"test afterSignInPage":32.546,"Crm login":3.632
+"test afterSignInPage":20.593,"Crm login":4.407
 };
 </script>
 <div class="row">
+<div class="col-lg-6 col-md-12 category-container">
+<div class="card">
+<div class="card-header"><p>Tags</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
+<tr>
+<td>@Deals</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
 <div class="col-lg-6 col-md-12 sysenv-container">
 <div class="card">
 <div class="card-header"><p>System/Environment</p></div>
@@ -225,6 +247,12 @@ eventsCount: 5,
 <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
 </ul>
 </li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
+<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" href="#">@Deals</a>
+</ul>
+</li>
 </ul>
 </div>    <div class="test-list-wrapper scrollable">
       <ul class="test-list-item">
@@ -235,7 +263,7 @@ eventsCount: 5,
           <div class="test-detail">
             <p class="name">test afterSignInPage</p>
             <p class="text-sm">
-              <span>12:38:11 p.m.</span> / <span>00:00:32:546</span>
+              <span>16:49:56 p.m.</span> / <span>00:00:20:593</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -244,9 +272,9 @@ eventsCount: 5,
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-pass">test afterSignInPage</h5>
-<span class='badge badge-success'>08.31.2023 12:38:11</span>
-<span class='badge badge-danger'>08.31.2023 12:38:44</span>
-<span class='badge badge-default'>00:00:32:546</span>
+<span class='badge badge-success'>09.01.2023 16:49:56</span>
+<span class='badge badge-danger'>09.01.2023 16:50:16</span>
+<span class='badge badge-default'>00:00:20:593</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 </div>
 <div class="m-t-10 m-l-5"></div>
@@ -256,30 +284,30 @@ eventsCount: 5,
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>test contacts page</div>
+        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>test deals page</div>
       </div>
     </div>
         <div class="collapse">
           <div class="card-body">
-              <div class="step pass-bg" title="com.stepDefinitions.AfterSignInStepDef.user_is_already_logged_in(io.cucumber.datatable.DataTable)">
+              <div class="step pass-bg" title="parallelExecution.AfterSignInStepDef.user_is_already_logged_in(io.cucumber.datatable.DataTable)">
                 <span>Given user is already logged in</span>
       <div><table class='markup-table table '><tr><td>username</td><td>password</td></tr><tr><td>pratiksandhu6162@gmail.com</td><td>Pratik@123</td></tr></table>
       </div>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="com.stepDefinitions.AfterSignInStepDef.user_is_on_AfterSignInPage()">
+              <div class="step pass-bg" title="parallelExecution.AfterSignInStepDef.user_is_on_AfterSignInPage()">
                 <span>Given user is on AfterSignInPage</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="com.stepDefinitions.AfterSignInStepDef.user_clicks_on_contacts()">
-                <span>When user clicks on contacts</span>
+              <div class="step pass-bg" title="parallelExecution.AfterSignInStepDef.user_clicks_on_deals()">
+                <span>When user clicks on deals</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="com.stepDefinitions.AfterSignInStepDef.contacts_page_is_opened()">
-                <span>Then contacts page is opened</span>
+              <div class="step pass-bg" title="parallelExecution.AfterSignInStepDef.deals_page_is_opened()">
+                <span>Then deals page is opened</span>
       <div>
       </div>
               </div>
@@ -289,30 +317,30 @@ eventsCount: 5,
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="21"><span class="badge log pass-bg mr-2">Pass</span>test deals page</div>
+        <div class="node" id="3"><span class="badge log pass-bg mr-2">Pass</span>test contacts page</div>
       </div>
     </div>
         <div class="collapse">
           <div class="card-body">
-              <div class="step pass-bg" title="com.stepDefinitions.AfterSignInStepDef.user_is_already_logged_in(io.cucumber.datatable.DataTable)">
+              <div class="step pass-bg" title="parallelExecution.AfterSignInStepDef.user_is_already_logged_in(io.cucumber.datatable.DataTable)">
                 <span>Given user is already logged in</span>
       <div><table class='markup-table table '><tr><td>username</td><td>password</td></tr><tr><td>pratiksandhu6162@gmail.com</td><td>Pratik@123</td></tr></table>
       </div>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="com.stepDefinitions.AfterSignInStepDef.user_is_on_AfterSignInPage()">
+              <div class="step pass-bg" title="parallelExecution.AfterSignInStepDef.user_is_on_AfterSignInPage()">
                 <span>Given user is on AfterSignInPage</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="com.stepDefinitions.AfterSignInStepDef.user_clicks_on_deals()">
-                <span>When user clicks on deals</span>
+              <div class="step pass-bg" title="parallelExecution.AfterSignInStepDef.user_clicks_on_contacts()">
+                <span>When user clicks on contacts</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="com.stepDefinitions.AfterSignInStepDef.deals_page_is_opened()">
-                <span>Then deals page is opened</span>
+              <div class="step pass-bg" title="parallelExecution.AfterSignInStepDef.contacts_page_is_opened()">
+                <span>Then contacts page is opened</span>
       <div>
       </div>
               </div>
@@ -322,14 +350,14 @@ eventsCount: 5,
 </div>
           </div>
         </li>
-        <li class="test-item"  status="pass" test-id="3"
+        <li class="test-item"  status="pass" test-id="4"
           author=""
           tag=""
           device="">
           <div class="test-detail">
             <p class="name">Crm login</p>
             <p class="text-sm">
-              <span>12:38:11 p.m.</span> / <span>00:00:03:632</span>
+              <span>16:49:56 p.m.</span> / <span>00:00:04:407</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -338,10 +366,10 @@ eventsCount: 5,
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-pass">Crm login</h5>
-<span class='badge badge-success'>08.31.2023 12:38:11</span>
-<span class='badge badge-danger'>08.31.2023 12:38:15</span>
-<span class='badge badge-default'>00:00:03:632</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
+<span class='badge badge-success'>09.01.2023 16:49:56</span>
+<span class='badge badge-danger'>09.01.2023 16:50:00</span>
+<span class='badge badge-default'>00:00:04:407</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
 </div>
 <div class="m-t-10 m-l-5"></div>
 </div>
@@ -350,27 +378,27 @@ eventsCount: 5,
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="4"><span class="badge log pass-bg mr-2">Pass</span>login into crm account</div>
+        <div class="node" id="5"><span class="badge log pass-bg mr-2">Pass</span>login into crm account</div>
       </div>
     </div>
         <div class="collapse">
           <div class="card-body">
-              <div class="step pass-bg" title="com.stepDefinitions.LoginStepDef.user_is_on_home_page()">
+              <div class="step pass-bg" title="parallelExecution.LoginStepDef.user_is_on_home_page()">
                 <span>Given user is on home page</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="com.stepDefinitions.LoginStepDef.user_clicks_on_LogIN()">
+              <div class="step pass-bg" title="parallelExecution.LoginStepDef.user_clicks_on_LogIN()">
                 <span>When user clicks on LogIN</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="com.stepDefinitions.LoginStepDef.user_enters_username_and_password(java.lang.String,java.lang.String)">
+              <div class="step pass-bg" title="parallelExecution.LoginStepDef.user_enters_username_and_password(java.lang.String,java.lang.String)">
                 <span>When user enters username "Pratiksandhu6162@gmail.com" and password "Pratik@123" and clicks on login button</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="com.stepDefinitions.LoginStepDef.user_is_signed_in_and_verify_title()">
+              <div class="step pass-bg" title="parallelExecution.LoginStepDef.user_is_signed_in_and_verify_title()">
                 <span>Then user is signed in and verify title.</span>
       <div>
       </div>
@@ -390,7 +418,59 @@ eventsCount: 5,
 </div>
 <div class="test-content-detail"><div class="detail-body"></div></div>
 </div></div>
-        </div>
+<div class="test-wrapper row view category-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@Deals</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@Deals</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:49:56 p.m.</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>test deals page</a>
+<div class="">
+<span class="badge badge-default">test afterSignInPage.test deals page</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div>        </div>
       </div>
     </div>
   </div>

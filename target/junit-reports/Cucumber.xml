@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="3" time="20.687">
+    <testcase classname="test afterSignInPage" name="test contacts page" time="20.614">
+        <system-out>
+            <![CDATA[Given user is already logged in.............................................passed
+Given user is on AfterSignInPage............................................passed
+When user clicks on contacts................................................passed
+Then contacts page is opened................................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="test afterSignInPage" name="test deals page" time="14.225">
+        <system-out>
+            <![CDATA[Given user is already logged in.............................................passed
+Given user is on AfterSignInPage............................................passed
+When user clicks on deals...................................................passed
+Then deals page is opened...................................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Crm login" name="login into crm account" time="4.407">
+        <system-out>
+            <![CDATA[Given user is on home page..................................................passed
+When user clicks on LogIN...................................................passed
+When user enters username "Pratiksandhu6162@gmail.com" and password "Pratik@123" and clicks on login button.passed
+Then user is signed in and verify title.....................................passed
+]]>
+        </system-out>
+    </testcase>
+</testsuite>

@@ -12,7 +12,8 @@ import io.cucumber.testng.CucumberOptions;
 		plugin = {"pretty",
 				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
 				"timeline:test-output-thread/", // Report to verify if the parallel execution happened or not
-                 "rerun:target/failedTests.txt"		
+                 "rerun:target/failedTests.txt"	,
+				 "junit:target/junit-reports/Cucumber.xml"	
 		},
 		monochrome=true,
 		dryRun=false
