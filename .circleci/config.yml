@@ -17,6 +17,11 @@ jobs:
           name: Update Packages
           command: sudo apt-get update
 
+      # Install X virtual framebuffer
+      - run:
+          name: Install X virtual framebuffer
+          command: sudo apt-get install -y xvfb
+
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "pom.xml" }}
@@ -40,31 +45,25 @@ jobs:
             sudo apt-get update
             sudo apt-get install -y google-chrome-stable
 
+      # Run tests with Xvfb
       - run:
-          name: Run Tests
-          command: mvn verify
-      - run:
-          name: Install xmlstarlet
-          command: sudo apt-get install -y xmlstarlet
-      - run:
-          name: Parse JUnit XML and Print Test Results
+          name: Run Tests with Xvfb
           command: |
-            xmlstarlet sel -T -t -m "//testcase" \
-            -o "Class: " -v "@classname" -o ", " \
-            -o "Test: " -v "@name" -o ", " \
-            -o "Status: " \
-            -i "failure" -o "FAILED" -b \
-            -i "error" -o "ERROR" -b \
-            -o "PASSED" -n target/junit-reports/Cucumber.xml
+            Xvfb :99 &
+            export DISPLAY=:99
+            mvn verify
 
       - store_test_results:
-         path: target/junit-reports/Cucumber.xml
+          path: target/junit-reports/Cucumber.xml
+
       - store_artifacts:
           path: test-output/SparkReport
           destination: spark_report
+
       - store_artifacts:
           path: PdfReport/ExtentPdf.pdf
           destination: pdf_reports
+
 workflows:
   build:
     jobs:
