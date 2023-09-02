@@ -46,8 +46,8 @@ jobs:
       - store_test_results:
          path: target/junit-reports
       - store_artifacts:
-          path: test-output/PdfReport
-          destination: PdfReport
+          path: test-output/SparkReport
+          destination: spark_report
 
 workflows:
   build:
