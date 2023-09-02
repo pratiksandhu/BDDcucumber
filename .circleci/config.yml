@@ -43,6 +43,20 @@ jobs:
       - run:
           name: Run Tests
           command: mvn verify
+      - run:
+          name: Install xmlstarlet
+          command: sudo apt-get install -y xmlstarlet
+      - run:
+          name: Parse JUnit XML and Print Test Results
+          command: |
+            xmlstarlet sel -T -t -m "//testcase" \
+            -o "Class: " -v "@classname" -o ", " \
+            -o "Test: " -v "@name" -o ", " \
+            -o "Status: " \
+            -i "failure" -o "FAILED" -b \
+            -i "error" -o "ERROR" -b \
+            -o "PASSED" -n target/junit-reports/Cucumber.xml
+
       - store_test_results:
          path: target/junit-reports/Cucumber.xml
       - store_artifacts:
