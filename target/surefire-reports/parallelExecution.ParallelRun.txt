@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: parallelExecution.ParallelRun
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 24.232 s - in parallelExecution.ParallelRun
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 23.861 s - in parallelExecution.ParallelRun
