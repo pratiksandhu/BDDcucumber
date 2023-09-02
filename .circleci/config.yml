@@ -43,10 +43,11 @@ jobs:
       - run:
           name: Run Tests
           command: mvn verify
-      # - store_test_results:
-      #    path: target/junit-reports
-      - store_artifacts:  # this line is new
+      - store_test_results:
+         path: target/junit-reports
+      - store_artifacts:
           path: test-output/PdfReport/ExtentPdf.pdf
+          destination: PdfReport
 
 workflows:
   build:
