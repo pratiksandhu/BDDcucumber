@@ -49,7 +49,7 @@ jobs:
           path: test-output/SparkReport
           destination: spark_report
       - store_artifacts:
-          path: PdfReport/ExtentPdf
+          path: PdfReport/ExtentPdf.pdf
           destination: pdf_reports
 workflows:
   build:
