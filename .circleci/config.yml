@@ -46,7 +46,7 @@ jobs:
       - store_test_results:
          path: target/junit-reports
       - store_artifacts:
-          path: test-output/PdfReport/ExtentPdf.pdf
+          path: test-output/PdfReport
           destination: PdfReport
 
 workflows:
