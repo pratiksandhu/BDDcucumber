@@ -46,7 +46,7 @@ jobs:
       # - store_test_results:
       #    path: target/junit-reports
       - store_artifacts:  # this line is new
-          path: target/cucumber.json
+          path: test output/PdfReport/ExtentPdf.pdf
 
 workflows:
   build:
