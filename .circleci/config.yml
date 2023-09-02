@@ -48,7 +48,9 @@ jobs:
       - store_artifacts:
           path: test-output/SparkReport
           destination: spark_report
-
+      - store_artifacts:
+          path: test-output/PdfReport/ExtentPdf
+          destination: pdf_reports
 workflows:
   build:
     jobs:
