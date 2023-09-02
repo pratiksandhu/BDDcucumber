@@ -11,7 +11,7 @@ public class AfterSignInPage  {
 	
 	 @FindBy(xpath="//span[text()='Contacts']")
 	 WebElement contacts;
-	 @FindBy(xpath="//span[text()='Deals']")
+	 @FindBy(xpath="//span[text()='Deas']")
 	 WebElement deals;
 	
 	public AfterSignInPage() {
