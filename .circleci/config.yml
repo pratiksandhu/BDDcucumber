@@ -51,9 +51,7 @@ jobs:
       - store_artifacts:
           path: PdfReport/ExtentPdf.pdf
           destination: pdf_reports
-      - store_artifacts:
-          path: test-output/SparkReport/screenshots
-          destination: screenshots
+      
 workflows:
   build:
     jobs:
