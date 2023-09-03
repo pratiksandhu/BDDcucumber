@@ -2,51 +2,26 @@
 <testng-results ignored="0" total="3" passed="2" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-09-03T07:09:14Z" name="Surefire suite" finished-at="2023-09-03T07:09:38Z" duration-ms="23673">
+  <suite started-at="2023-09-03T07:14:27Z" name="Surefire suite" finished-at="2023-09-03T07:14:50Z" duration-ms="23298">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:parallelExecution.ParallelRun@4f6ee6e4]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:parallelExecution.ParallelRun@6b927fb]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2023-09-03T07:09:14Z" name="Surefire test" finished-at="2023-09-03T07:09:38Z" duration-ms="23673">
+    <test started-at="2023-09-03T07:14:27Z" name="Surefire test" finished-at="2023-09-03T07:14:50Z" duration-ms="23298">
       <class name="parallelExecution.ParallelRun">
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:parallelExecution.ParallelRun@4f6ee6e4]" started-at="2023-09-03T07:09:14Z" name="setUpClass" finished-at="2023-09-03T07:09:14Z" duration-ms="330" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:parallelExecution.ParallelRun@6b927fb]" started-at="2023-09-03T07:14:27Z" name="setUpClass" finished-at="2023-09-03T07:14:27Z" duration-ms="333" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@3e694b3f]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:parallelExecution.ParallelRun@4f6ee6e4]" started-at="2023-09-03T07:09:14Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-09-03T07:09:34Z" duration-ms="19919" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["test contacts page"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[test afterSignInPage]"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:parallelExecution.ParallelRun@4f6ee6e4]" started-at="2023-09-03T07:09:14Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-09-03T07:09:18Z" duration-ms="4041" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["login into crm account"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[Crm login]"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:parallelExecution.ParallelRun@4f6ee6e4]" started-at="2023-09-03T07:09:14Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-09-03T07:09:29Z" duration-ms="14269" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:parallelExecution.ParallelRun@6b927fb]" started-at="2023-09-03T07:14:27Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-09-03T07:14:41Z" duration-ms="14278" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -55,7 +30,7 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA["Optional[test afterSignInPage]"]]>
+                <![CDATA["test afterSignInPage"]]>
               </value>
             </param>
           </params>
@@ -67,8 +42,8 @@ For documentation on this error, please visit: https://www.seleniumhq.org/except
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'Pratiks-MBP', ip: 'fe80:0:0:0:4d3:10f9:ec91:c1d1%en0', os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '13.5.1', java.version: '11.0.19'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.140, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: /var/folders/kl/x7sg3c3s7w5...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59551}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 9d30e385b3f3e22a26931d84970764cc
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.140, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: /var/folders/kl/x7sg3c3s7w5...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59978}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 29b8205a15a8cf7006bea34a62c56f7d
 *** Element info: {Using=xpath, value=//span[text()='Deas']}]]>
             </message>
             <full-stacktrace>
@@ -78,8 +53,8 @@ For documentation on this error, please visit: https://www.seleniumhq.org/except
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'Pratiks-MBP', ip: 'fe80:0:0:0:4d3:10f9:ec91:c1d1%en0', os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '13.5.1', java.version: '11.0.19'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.140, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: /var/folders/kl/x7sg3c3s7w5...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59551}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 9d30e385b3f3e22a26931d84970764cc
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.140, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: /var/folders/kl/x7sg3c3s7w5...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59978}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 29b8205a15a8cf7006bea34a62c56f7d
 *** Element info: {Using=xpath, value=//span[text()='Deas']}
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
@@ -100,11 +75,11 @@ at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAc
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 at java.base/java.lang.reflect.Method.invoke(Method.java:566)
 at org.openqa.selenium.support.events.EventFiringWebDriver.lambda$new$1(EventFiringWebDriver.java:105)
-at com.sun.proxy.$Proxy21.findElement(Unknown Source)
+at com.sun.proxy.$Proxy22.findElement(Unknown Source)
 at org.openqa.selenium.support.events.EventFiringWebDriver.findElement(EventFiringWebDriver.java:194)
 at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
 at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at com.sun.proxy.$Proxy24.click(Unknown Source)
+at com.sun.proxy.$Proxy25.click(Unknown Source)
 at com.pages.AfterSignInPage.deals(AfterSignInPage.java:26)
 at parallelExecution.AfterSignInStepDef.user_clicks_on_deals(AfterSignInStepDef.java:59)
 at ✽.user clicks on deals(file:///Users/pratiksandhu/eclipse-workspace/BDDCucumberLatest/src/test/resources/parallelExecution/AfterSignIn.feature:16)
@@ -114,7 +89,39 @@ at ✽.user clicks on deals(file:///Users/pratiksandhu/eclipse-workspace/BDDCucu
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:parallelExecution.ParallelRun@4f6ee6e4]" started-at="2023-09-03T07:09:34Z" name="tearDownClass" finished-at="2023-09-03T07:09:38Z" duration-ms="3415" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:parallelExecution.ParallelRun@6b927fb]" started-at="2023-09-03T07:14:27Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-09-03T07:14:47Z" duration-ms="19780" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["test contacts page"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["test afterSignInPage"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:parallelExecution.ParallelRun@6b927fb]" started-at="2023-09-03T07:14:27Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-09-03T07:14:30Z" duration-ms="3518" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["login into crm account"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Crm login"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:parallelExecution.ParallelRun@6b927fb]" started-at="2023-09-03T07:14:47Z" name="tearDownClass" finished-at="2023-09-03T07:14:50Z" duration-ms="3180" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

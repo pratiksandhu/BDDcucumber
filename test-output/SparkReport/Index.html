@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">Grasshopper Report</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Sep. 3, 2023 03:09:14 a.m.</span></a>
+<a href="#"><span class="badge badge-primary">Sep. 3, 2023 03:14:27 a.m.</span></a>
 </li>
 </ul>
 </div>
@@ -71,13 +71,13 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Sep. 3, 2023 03:09:14 a.m.</h3>
+<h3>Sep. 3, 2023 03:14:27 a.m.</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Sep. 3, 2023 03:09:34 a.m.</h3>
+<h3>Sep. 3, 2023 03:14:47 a.m.</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -167,7 +167,7 @@
 </div></div>
 <script>
 var timeline = {
-"test afterSignInPage":19.838,"Crm login":3.954
+"Crm login":3.456,"test afterSignInPage":19.715
 };
 </script>
 <div class="row">
@@ -262,25 +262,25 @@ eventsCount: 5,
 </ul>
 </div>    <div class="test-list-wrapper scrollable">
       <ul class="test-list-item">
-        <li class="test-item"  status="fail" test-id="1"
+        <li class="test-item"  status="pass" test-id="1"
           author=""
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">test afterSignInPage</p>
+            <p class="name">Crm login</p>
             <p class="text-sm">
-              <span>3:09:15 a.m.</span> / <span>00:00:19:838</span>
-              <span class="badge fail-bg log float-right">Fail</span>
+              <span>3:14:27 a.m.</span> / <span>00:00:03:456</span>
+              <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-fail">test afterSignInPage</h5>
-<span class='badge badge-success'>09.03.2023 3:09:15 a.m.</span>
-<span class='badge badge-danger'>09.03.2023 3:09:34 a.m.</span>
-<span class='badge badge-default'>00:00:19:838</span>
+<h5 class="test-status text-pass">Crm login</h5>
+<span class='badge badge-success'>09.03.2023 3:14:27 a.m.</span>
+<span class='badge badge-danger'>09.03.2023 3:14:30 a.m.</span>
+<span class='badge badge-default'>00:00:03:456</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -292,40 +292,68 @@ eventsCount: 5,
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>test contacts page</div>
+        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>login into crm account</div>
       </div>
     </div>
         <div class="collapse">
           <div class="card-body">
-              <div class="step pass-bg" title="parallelExecution.AfterSignInStepDef.user_is_already_logged_in(io.cucumber.datatable.DataTable)">
-                <span>Given user is already logged in</span>
-      <div><table class='markup-table table '><tr><td>username</td><td>password</td></tr><tr><td>pratiksandhu6162@gmail.com</td><td>Pratik@123</td></tr></table>
-      </div>
+              <div class="step pass-bg" title="parallelExecution.LoginStepDef.user_is_on_home_page()">
+                <span>Given user is on home page</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="parallelExecution.AfterSignInStepDef.user_is_on_AfterSignInPage()">
-                <span>Given user is on AfterSignInPage</span>
+              <div class="step pass-bg" title="parallelExecution.LoginStepDef.user_clicks_on_LogIN()">
+                <span>When user clicks on LogIN</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="parallelExecution.AfterSignInStepDef.user_clicks_on_contacts()">
-                <span>When user clicks on contacts</span>
+              <div class="step pass-bg" title="parallelExecution.LoginStepDef.user_enters_username_and_password(java.lang.String,java.lang.String)">
+                <span>When user enters username "Pratiksandhu6162@gmail.com" and password "Pratik@123" and clicks on login button</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="parallelExecution.AfterSignInStepDef.contacts_page_is_opened()">
-                <span>Then contacts page is opened</span>
+              <div class="step pass-bg" title="parallelExecution.LoginStepDef.user_is_signed_in_and_verify_title()">
+                <span>Then user is signed in and verify title.</span>
       <div>
       </div>
               </div>
           </div>
         </div>
   </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="3"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">test afterSignInPage</p>
+            <p class="text-sm">
+              <span>3:14:27 a.m.</span> / <span>00:00:19:715</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">test afterSignInPage</h5>
+<span class='badge badge-success'>09.03.2023 3:14:27 a.m.</span>
+<span class='badge badge-danger'>09.03.2023 3:14:47 a.m.</span>
+<span class='badge badge-default'>00:00:19:715</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="3"><span class="badge log fail-bg mr-2">Fail</span>test deals page</div>
+        <div class="node" id="4"><span class="badge log fail-bg mr-2">Fail</span>test deals page</div>
           <div class="status-avatar float-right mr-4">
             <i class="fa fa-paperclip"></i>
           </div>
@@ -354,8 +382,8 @@ For documentation on this error, please visit: https://www.seleniumhq.org/except
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'Pratiks-MBP', ip: 'fe80:0:0:0:4d3:10f9:ec91:c1d1%en0', os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '13.5.1', java.version: '11.0.19'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.140, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: /var/folders/kl/x7sg3c3s7w5...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59551}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 9d30e385b3f3e22a26931d84970764cc
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.140, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: /var/folders/kl/x7sg3c3s7w5...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59978}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 29b8205a15a8cf7006bea34a62c56f7d
 *** Element info: {Using=xpath, value=//span[text()='Deas']}
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
@@ -376,11 +404,11 @@ Session ID: 9d30e385b3f3e22a26931d84970764cc
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
 	at org.openqa.selenium.support.events.EventFiringWebDriver.lambda$new$1(EventFiringWebDriver.java:105)
-	at com.sun.proxy.$Proxy21.findElement(Unknown Source)
+	at com.sun.proxy.$Proxy22.findElement(Unknown Source)
 	at org.openqa.selenium.support.events.EventFiringWebDriver.findElement(EventFiringWebDriver.java:194)
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy24.click(Unknown Source)
+	at com.sun.proxy.$Proxy25.click(Unknown Source)
 	at com.pages.AfterSignInPage.deals(AfterSignInPage.java:26)
 	at parallelExecution.AfterSignInStepDef.user_clicks_on_deals(AfterSignInStepDef.java:59)
 	at ✽.user clicks on deals(file:///Users/pratiksandhu/eclipse-workspace/BDDCucumberLatest/src/test/resources/parallelExecution/AfterSignIn.feature:16)
@@ -407,61 +435,33 @@ Session ID: 9d30e385b3f3e22a26931d84970764cc
           </div>
         </div>
   </div>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="4"
-          author=""
-          tag=""
-          device="">
-          <div class="test-detail">
-            <p class="name">Crm login</p>
-            <p class="text-sm">
-              <span>3:09:15 a.m.</span> / <span>00:00:03:954</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">Crm login</h5>
-<span class='badge badge-success'>09.03.2023 3:09:15 a.m.</span>
-<span class='badge badge-danger'>09.03.2023 3:09:18 a.m.</span>
-<span class='badge badge-default'>00:00:03:954</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
-<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
-<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
-</div>
-<div class="m-t-10 m-l-5"></div>
-</div>
-</div>
-<div class="accordion mt-4">
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="5"><span class="badge log pass-bg mr-2">Pass</span>login into crm account</div>
+        <div class="node" id="5"><span class="badge log pass-bg mr-2">Pass</span>test contacts page</div>
       </div>
     </div>
         <div class="collapse">
           <div class="card-body">
-              <div class="step pass-bg" title="parallelExecution.LoginStepDef.user_is_on_home_page()">
-                <span>Given user is on home page</span>
+              <div class="step pass-bg" title="parallelExecution.AfterSignInStepDef.user_is_already_logged_in(io.cucumber.datatable.DataTable)">
+                <span>Given user is already logged in</span>
+      <div><table class='markup-table table '><tr><td>username</td><td>password</td></tr><tr><td>pratiksandhu6162@gmail.com</td><td>Pratik@123</td></tr></table>
+      </div>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="parallelExecution.LoginStepDef.user_clicks_on_LogIN()">
-                <span>When user clicks on LogIN</span>
+              <div class="step pass-bg" title="parallelExecution.AfterSignInStepDef.user_is_on_AfterSignInPage()">
+                <span>Given user is on AfterSignInPage</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="parallelExecution.LoginStepDef.user_enters_username_and_password(java.lang.String,java.lang.String)">
-                <span>When user enters username "Pratiksandhu6162@gmail.com" and password "Pratik@123" and clicks on login button</span>
+              <div class="step pass-bg" title="parallelExecution.AfterSignInStepDef.user_clicks_on_contacts()">
+                <span>When user clicks on contacts</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="parallelExecution.LoginStepDef.user_is_signed_in_and_verify_title()">
-                <span>Then user is signed in and verify title.</span>
+              <div class="step pass-bg" title="parallelExecution.AfterSignInStepDef.contacts_page_is_opened()">
+                <span>Then contacts page is opened</span>
       <div>
       </div>
               </div>
@@ -512,9 +512,9 @@ Session ID: 9d30e385b3f3e22a26931d84970764cc
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>03:09:15 a.m.</td>
+<td>03:14:27 a.m.</td>
 <td>
-<a href="#" class="linked" test-id='1' id='3'>test deals page</a>
+<a href="#" class="linked" test-id='3' id='4'>test deals page</a>
 <div class="">
 <span class="badge badge-default">test afterSignInPage.test deals page</span>
 </div>
@@ -564,9 +564,9 @@ Session ID: 9d30e385b3f3e22a26931d84970764cc
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>03:09:28 a.m.</td>
+<td>03:14:41 a.m.</td>
 <td>
-<a href="#" class="linked" test-id='1' id='23'>When user clicks on deals</a>
+<a href="#" class="linked" test-id='3' id='23'>When user clicks on deals</a>
 <div class="">
 <span class="badge badge-default">test afterSignInPage.test deals page.When user clicks on deals</span>
 </div>
