@@ -16,6 +16,18 @@ jobs:
       - run:
           name: Update Packages
           command: sudo apt-get update
+     
+      - run:
+          name: Install X virtual framebuffer
+          command: sudo apt-get install -y xvfb
+
+      - run:
+          name: Start X virtual framebuffer
+          command: Xvfb :99 &
+      
+      - run:
+          name: Export Display
+          command: export DISPLAY=:99
 
       - restore_cache:
           keys:
