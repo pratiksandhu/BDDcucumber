@@ -17,11 +17,6 @@ jobs:
           name: Update Packages
           command: sudo apt-get update
 
-      # Install X virtual framebuffer
-      - run:
-          name: Install X virtual framebuffer
-          command: sudo apt-get install -y xvfb
-
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "pom.xml" }}
@@ -45,25 +40,20 @@ jobs:
             sudo apt-get update
             sudo apt-get install -y google-chrome-stable
 
-      # Run tests with Xvfb
       - run:
-          name: Run Tests with Xvfb
-          command: |
-            Xvfb :99 &
-            export DISPLAY=:99
-            mvn verify
-
+          name: Run Tests
+          command: mvn verify
       - store_test_results:
-          path: target/junit-reports/Cucumber.xml
-
+         path: target/junit-reports/Cucumber.xml
       - store_artifacts:
           path: test-output/SparkReport
           destination: spark_report
-
       - store_artifacts:
           path: PdfReport/ExtentPdf.pdf
           destination: pdf_reports
-
+      - store_artifacts:
+          path: test-output/screenshots
+          destination: screenshots
 workflows:
   build:
     jobs:
