@@ -53,10 +53,11 @@ public class Hooks {
 	}
 
 	@After(order = 1)
-	public void tearDown(Scenario scenario) {
+	public void tearDown(Scenario scenario) throws InterruptedException {
 		if (scenario.isFailed()) {
 			// take screenshot:
 			String screenshotName = scenario.getName().replaceAll(" ", "_");
+			Thread.sleep(5000);
 			byte[] sourcePath = ((TakesScreenshot) BaseClass.getDriver()).getScreenshotAs(OutputType.BYTES);
 			scenario.attach(sourcePath, "image/png", screenshotName);
 		}
