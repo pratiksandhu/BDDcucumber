@@ -53,8 +53,8 @@ public class Hooks {
 		if (scenario.isFailed()) {
 			// take screenshot:
 			String screenshotName = scenario.getName().replaceAll(" ", "_");
-			byte[] sourcePath = ((TakesScreenshot) BaseClass.getDriver()).getScreenshotAs(OutputType.BYTES);
-			scenario.attach(sourcePath, "image/png", screenshotName);
+			String sourcePath = ((TakesScreenshot) BaseClass.getDriver()).getScreenshotAs(OutputType.BASE64);
+			scenario.attach(sourcePath, "image/png;base64", screenshotName);
 
 		}
 	}
