@@ -2,6 +2,8 @@ package parallelExecution;
 
 import static org.junit.Assume.assumeTrue;
 
+import java.io.File;
+import java.util.Base64;
 import java.util.Properties;
 
 import org.junit.Assume;
@@ -22,12 +24,14 @@ public class Hooks {
 	private WebDriver driver;
 	private ConfigReader configReader;
 	Properties prop;
-    
-	/*@Before(value="@Deals",order = 0)
-	public void skipTests(Scenario scenario) {
-		System.out.println("skipped scenario is:" + scenario.getName());
-		Assume.assumeTrue(false);;
-	}*/
+
+	/*
+	 * @Before(value="@Deals",order = 0)
+	 * public void skipTests(Scenario scenario) {
+	 * System.out.println("skipped scenario is:" + scenario.getName());
+	 * Assume.assumeTrue(false);;
+	 * }
+	 */
 	@Before(order = 0)
 	public void getProperty() {
 		configReader = new ConfigReader();
@@ -39,10 +43,10 @@ public class Hooks {
 		String browserName = prop.getProperty("browser");
 		baseClass = new BaseClass();
 		baseClass.init_driver(browserName);
-		
+
 	}
-   
-	// for @after annotation, order=1 is executed first and then order=0 is executed 
+
+	// for @after annotation, order=1 is executed first and then order=0 is executed
 	@After(order = 0)
 	public void quitBrowser() {
 		BaseClass.getDriver().quit();
@@ -53,9 +57,8 @@ public class Hooks {
 		if (scenario.isFailed()) {
 			// take screenshot:
 			String screenshotName = scenario.getName().replaceAll(" ", "_");
-			String sourcePath = ((TakesScreenshot) BaseClass.getDriver()).getScreenshotAs(OutputType.BASE64);
-			scenario.attach(sourcePath, "image/png;base64", screenshotName);
-
+			byte[] sourcePath = ((TakesScreenshot) BaseClass.getDriver()).getScreenshotAs(OutputType.BYTES);
+			scenario.attach(sourcePath, "image/png", screenshotName);
 		}
 	}
 
