@@ -14,7 +14,7 @@ import io.cucumber.testng.CucumberOptions;
 				"timeline:test-output-thread/", // Report to verify if the parallel execution happened or not
                  "rerun:target/failedTests.txt"	,
 				 "junit:target/junit-reports/Cucumber.xml",
-				 "json:target/cucumber.json"
+				 "html:target/cucumber-html-report"
 		},
 		monochrome=true,
 		dryRun=false

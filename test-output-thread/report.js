@@ -1,37 +1,37 @@
 $(document).ready(function() {
 CucumberHTML.timelineItems.pushArray([
   {
-    "id": "8fec6587-f6ff-4d1b-bc01-19c0629342dc",
-    "feature": "Crm login",
-    "scenario": "login into crm account",
-    "start": 1693914208308,
-    "group": 19,
-    "content": "",
-    "tags": "",
-    "end": 1693914222653,
-    "className": "passed"
-  },
-  {
-    "id": "1a0742a0-1725-4ffb-952a-d22456abd5ae",
-    "feature": "test afterSignInPage",
-    "scenario": "test contacts page",
-    "start": 1693914208282,
-    "group": 17,
-    "content": "",
-    "tags": "",
-    "end": 1693914238964,
-    "className": "passed"
-  },
-  {
-    "id": "ae6abb0a-e519-4637-aa5b-66d04b89b97b",
+    "id": "238572d7-7ac7-44ee-8d2a-5ce5288aff6b",
     "feature": "test afterSignInPage",
     "scenario": "test deals page",
-    "start": 1693914208281,
+    "start": 1693926175374,
     "group": 18,
     "content": "",
     "tags": "@deals,",
-    "end": 1693914233470,
+    "end": 1693926191151,
     "className": "failed"
+  },
+  {
+    "id": "d2cdf416-5295-4ffa-a628-367530bfda07",
+    "feature": "Crm login",
+    "scenario": "login into crm account",
+    "start": 1693926175375,
+    "group": 19,
+    "content": "",
+    "tags": "",
+    "end": 1693926180669,
+    "className": "passed"
+  },
+  {
+    "id": "17f5f702-cd40-445c-8b22-59d21f0a33eb",
+    "feature": "test afterSignInPage",
+    "scenario": "test contacts page",
+    "start": 1693926175373,
+    "group": 17,
+    "content": "",
+    "tags": "",
+    "end": 1693926196709,
+    "className": "passed"
   }
 ]);
 CucumberHTML.timelineGroups.pushArray([

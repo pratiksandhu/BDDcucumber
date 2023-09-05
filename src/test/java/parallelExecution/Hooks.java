@@ -2,6 +2,7 @@ package parallelExecution;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Base64;
 import java.util.Properties;
 
 import org.apache.commons.io.FileUtils;
@@ -61,12 +62,15 @@ public class Hooks {
         
 			 // Capture screenshot and get its path
 			 String screenshotPath = takeScreenshotAtEndOfTest(scenarioName);
+			 File file = new File(screenshotPath);
+			 byte[] fileContent = FileUtils.readFileToByteArray(file);
+			 String encodedString = Base64.getEncoder().encodeToString(fileContent);
 			 
-			 // Convert the absolute path to a relative path for the Spark/Extent report
-			 String relativeScreenshotPath = "./test-output/SparkReport/" + new File(screenshotPath).getName();
+			//  // Convert the absolute path to a relative path for the Spark/Extent report
+			//  String relativeScreenshotPath = "./test-output/SparkReport/" + new File(screenshotPath).getName();
 			 
 			 // Add to your Spark Report (or extent report)
-			 ExtentCucumberAdapter.addTestStepScreenCaptureFromPath(relativeScreenshotPath);
+			 ExtentCucumberAdapter.addTestStepLog("<img src='data:image/png;base64," + encodedString + "' />");
 
 			 byte[] screenshotBytes = ((TakesScreenshot) BaseClass.getDriver()).getScreenshotAs(OutputType.BYTES);
 			 scenario.attach(screenshotBytes, "image/png", scenarioName);
