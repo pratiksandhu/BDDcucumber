@@ -52,6 +52,7 @@ jobs:
          path: target/junit-reports/Cucumber.xml
       - store_artifacts:
           path: test-output/SparkReport/
+          destination: spark_report
       - store_artifacts:
           path: PdfReport/ExtentPdf.pdf
           destination: pdf_reports
