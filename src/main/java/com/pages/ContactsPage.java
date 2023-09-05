@@ -9,7 +9,7 @@ import com.base.BaseClass;
 
 public class ContactsPage {
 
- @FindBy(xpath="//span[contains(text(),'Contacts')]")
+ @FindBy(xpath="//span[contains(text(),'Contacs')]")
  WebElement contacts;
  
  public ContactsPage() {
