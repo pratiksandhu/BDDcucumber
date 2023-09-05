@@ -13,7 +13,7 @@ import com.base.BaseClass;
  
 public class HomePage {
 	
-	@FindBy(linkText="Sign Up")
+	@FindBy(xpath = "//a[text()='Sign Up']")
 	WebElement logIn;
 	
 	public HomePage() {
@@ -21,9 +21,9 @@ public class HomePage {
 	}
 	
 	public LoginPage loginPage() throws InterruptedException {
-	 JavascriptExecutor js = (JavascriptExecutor) BaseClass.getDriver();
-	 js.executeScript("arguments[0].click();", logIn);
-		//logIn.click();
+	//  JavascriptExecutor js = (JavascriptExecutor) BaseClass.getDriver();
+	//  js.executeScript("arguments[0].click();", logIn);
+		logIn.click();
 	    
 		
 

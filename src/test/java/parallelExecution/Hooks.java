@@ -1,16 +1,14 @@
 package parallelExecution;
 
-import static org.junit.Assume.assumeTrue;
-
 import java.io.File;
-import java.util.Base64;
+import java.io.IOException;
 import java.util.Properties;
 
-import org.junit.Assume;
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
 
+import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
 import com.base.BaseClass;
 import com.util.ConfigReader;
 
@@ -21,7 +19,6 @@ import io.cucumber.java.Scenario;
 public class Hooks {
 
 	private BaseClass baseClass;
-	private WebDriver driver;
 	private ConfigReader configReader;
 	Properties prop;
 
@@ -53,14 +50,49 @@ public class Hooks {
 	}
 
 	@After(order = 1)
-	public void tearDown(Scenario scenario) throws InterruptedException {
+	public void tearDown(Scenario scenario) throws InterruptedException, IOException {
 		if (scenario.isFailed()) {
 			// take screenshot:
-			String screenshotName = scenario.getName().replaceAll(" ", "_");
-			Thread.sleep(5000);
-			byte[] sourcePath = ((TakesScreenshot) BaseClass.getDriver()).getScreenshotAs(OutputType.BYTES);
-			scenario.attach(sourcePath, "image/png", screenshotName);
+			// String screenshotName = scenario.getName().replaceAll(" ", "_");
+			// byte[] sourcePath = ((TakesScreenshot) BaseClass.getDriver()).getScreenshotAs(OutputType.BYTES);
+			// scenario.attach(sourcePath, "image/png", screenshotName);
+			 // Get the name of the scenario
+			 String scenarioName = scenario.getName().replaceAll(" ", "_");
+        
+			 // Capture screenshot and get its path
+			 String screenshotPath = takeScreenshotAtEndOfTest(scenarioName);
+			 
+			 // Convert the absolute path to a relative path for the Spark/Extent report
+			 String relativeScreenshotPath = "./test-output/SparkReport/" + new File(screenshotPath).getName();
+			 
+			 // Add to your Spark Report (or extent report)
+			 ExtentCucumberAdapter.addTestStepScreenCaptureFromPath(relativeScreenshotPath);
+
+			 byte[] screenshotBytes = ((TakesScreenshot) BaseClass.getDriver()).getScreenshotAs(OutputType.BYTES);
+			 scenario.attach(screenshotBytes, "image/png", scenarioName);
+			
 		}
 	}
+		public String takeScreenshotAtEndOfTest(String scenarioName) throws IOException {
+			File scrFile = ((TakesScreenshot) BaseClass.getDriver()).getScreenshotAs(OutputType.FILE);
+			String currentDir = System.getProperty("user.dir");
+			String screenshotDir = currentDir + "/test-output/SparkReport";
+			String screenshotPath = screenshotDir + "/" + scenarioName + ".png"; // Unique name based on scenario
+		
+			File screenshotDirFile = new File(screenshotDir);
+			if (!screenshotDirFile.exists()) {
+				screenshotDirFile.mkdirs();
+			}
+		
+			FileUtils.copyFile(scrFile, new File(screenshotPath));
+			return screenshotPath;
+		}
+		
+		
+		
+		
+		
+		
+		
 
 }
