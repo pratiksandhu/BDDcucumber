@@ -12,6 +12,11 @@ jobs:
     executor: maven-executor
     steps:
       - checkout
+      
+      - run:
+         name: Set Timezone
+         command: echo 'export TZ="/usr/share/zoneinfo/America/Toronto"' >> $BASH_ENV
+
 
       - run:
           name: Update Packages
