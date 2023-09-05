@@ -72,8 +72,8 @@ public class Hooks {
 			 // Add to your Spark Report (or extent report)
 			 ExtentCucumberAdapter.addTestStepLog("<img src='data:image/png;base64," + encodedString + "' />");
 
-			 byte[] screenshotBytes = ((TakesScreenshot) BaseClass.getDriver()).getScreenshotAs(OutputType.BYTES);
-			 scenario.attach(screenshotBytes, "image/png", scenarioName);
+			//  byte[] screenshotBytes = ((TakesScreenshot) BaseClass.getDriver()).getScreenshotAs(OutputType.BYTES);
+			//  scenario.attach(screenshotBytes, "image/png", scenarioName);
 			
 		}
 	}
