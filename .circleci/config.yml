@@ -12,7 +12,7 @@ jobs:
     executor: maven-executor
     steps:
       - checkout
-      
+
       - run:
          name: Set Timezone
          command: echo 'export TZ="/usr/share/zoneinfo/America/Toronto"' >> $BASH_ENV
@@ -56,18 +56,12 @@ jobs:
       - store_artifacts:
           path: PdfReport/ExtentPdf.pdf
           destination: pdf_reports
-      - store_artifacts:
-          path: target/cucumber.json
-          destination: cucumber_reports
       - run:
           name: Delete Specific Files
           command: |
-            pwd
-            ls -al ./test-output/SparkReport/
-            rm -fv ./test-output/SparkReport/embedded*.png
-            ls -al ./test-output/SparkReport/
+           rm -f ./test-output/SparkReport/embedded*.png
+          when: always
 
-      
 workflows:
   build:
     jobs:
