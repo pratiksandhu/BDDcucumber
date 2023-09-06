@@ -73,8 +73,12 @@ public void tearDown(Scenario scenario) throws IOException {
 
         // Save the screenshot in your directory with custom name
         File screenshotDirectory = new File("test-output/SparkReport");
-        boolean dirCreated = screenshotDirectory.mkdirs();
-        System.out.println("Directory exists or was created: " + dirCreated);
+        try {
+			boolean dirCreated = screenshotDirectory.mkdirs();
+			System.out.println("Directory exists or was created: " + dirCreated);
+		} catch (SecurityException se) {
+			System.out.println("Permission issue: " + se.getMessage());
+		}
         
         File screenshot = new File(screenshotDirectory, screenshotName + ".png");
         try (FileOutputStream out = new FileOutputStream(screenshot)) {
