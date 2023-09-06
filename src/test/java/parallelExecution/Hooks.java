@@ -3,6 +3,8 @@ package parallelExecution;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Properties;
 
 import org.openqa.selenium.OutputType;
@@ -74,9 +76,11 @@ public void tearDown(Scenario scenario) throws InterruptedException, IOException
         try (FileOutputStream out = new FileOutputStream(screenshot)) {
             out.write(sourcePath);
         }
+		// Read the saved screenshot as a byte array
+        byte[] savedScreenshot = Files.readAllBytes(Paths.get(screenshot.getAbsolutePath()));
 
         // attach screenshot to scenario
-        scenario.attach(sourcePath, "image/png", screenshotName);
+        scenario.attach(savedScreenshot, "image/png", screenshotName);
 	}
 }
 }
