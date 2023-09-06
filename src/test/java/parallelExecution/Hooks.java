@@ -61,28 +61,36 @@ public class Hooks {
 	// 	}
 	// }
 	@After(order = 1)
-public void tearDown(Scenario scenario) throws InterruptedException, IOException {
-    if (scenario.isFailed()) {
-        // take screenshot:
-        String screenshotName = scenario.getName().replaceAll(" ", "_");
-        byte[] sourcePath = ((TakesScreenshot) BaseClass.getDriver()).getScreenshotAs(OutputType.BYTES);
-
-        // Save the screenshot in your directory with custom name
-        File screenshotDirectory = new File("test-output/SparkReport");
-        if (!screenshotDirectory.exists()) {
-            screenshotDirectory.mkdirs();
-        }
-        File screenshot = new File(screenshotDirectory, screenshotName + ".png");
-        try (FileOutputStream out = new FileOutputStream(screenshot)) {
-            out.write(sourcePath);
-        }
-		// Read the saved screenshot as a byte array
-        byte[] savedScreenshot = Files.readAllBytes(Paths.get(screenshot.getAbsolutePath()));
-
-        // attach screenshot to scenario
-        scenario.attach(savedScreenshot, "image/png", screenshotName);
+	public void tearDown(Scenario scenario) throws InterruptedException, IOException {
+		System.out.println("Inside tearDown");
+		if (scenario.isFailed()) {
+			System.out.println("Scenario failed, taking screenshot");
+			
+			// Take screenshot
+			String screenshotName = scenario.getName().replaceAll(" ", "_");
+			byte[] sourcePath = ((TakesScreenshot) BaseClass.getDriver()).getScreenshotAs(OutputType.BYTES);
+			System.out.println("Screenshot taken");
+	
+			// Save the screenshot in your directory with custom name
+			File screenshotDirectory = new File("test-output/SparkReport");
+			if (!screenshotDirectory.exists()) {
+				screenshotDirectory.mkdirs();
+			}
+			File screenshot = new File(screenshotDirectory, screenshotName + ".png");
+			try (FileOutputStream out = new FileOutputStream(screenshot)) {
+				out.write(sourcePath);
+			}
+			System.out.println("Screenshot saved: " + screenshot.getAbsolutePath());
+	
+			// Read the saved screenshot as a byte array
+			byte[] savedScreenshot = Files.readAllBytes(Paths.get(screenshot.getAbsolutePath()));
+	
+			// Attach the saved screenshot to scenario
+			scenario.attach(savedScreenshot, "image/png", screenshotName);
+			System.out.println("Screenshot attached to scenario");
+		}
 	}
-}
+	
 }
         
 	
