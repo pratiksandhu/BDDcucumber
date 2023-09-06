@@ -50,55 +50,41 @@ public class Hooks {
 		BaseClass.getDriver().quit();
 	}
 
-	// @After(order = 1)
-	// public void tearDown(Scenario scenario) throws InterruptedException, IOException {
-	// 	if (scenario.isFailed()) {
-	// 		// take screenshot:
-	// 		String screenshotName = scenario.getName().replaceAll(" ", "_");
-	// 		byte[] sourcePath = ((TakesScreenshot) BaseClass.getDriver()).getScreenshotAs(OutputType.BYTES);
-	// 		scenario.attach(sourcePath, "image/png", screenshotName);
-
-	// 	}
-	// }
 	@After(order = 1)
-public void tearDown(Scenario scenario) throws IOException {
-    System.out.println("Inside tearDown");
-    if (scenario.isFailed()) {
-        System.out.println("Scenario failed, taking screenshot");
+	public void tearDown(Scenario scenario) throws InterruptedException, IOException {
+		if (scenario.isFailed()) {
+			// take screenshot:
+			String screenshotName = scenario.getName().replaceAll(" ", "_");
+			byte[] sourcePath = ((TakesScreenshot) BaseClass.getDriver()).getScreenshotAs(OutputType.BYTES);
+			scenario.attach(sourcePath, "image/png", screenshotName);
 
-        // Take screenshot
-        String screenshotName = scenario.getName().replaceAll(" ", "_");
-        byte[] sourcePath = ((TakesScreenshot) BaseClass.getDriver()).getScreenshotAs(OutputType.BYTES);
-        System.out.println("Screenshot taken");
-
-        // Save the screenshot in your directory with custom name
-        File screenshotDirectory = new File("test-output/SparkReport");
-        try {
-			boolean dirCreated = screenshotDirectory.mkdirs();
-			System.out.println("Directory exists or was created: " + dirCreated);
-		} catch (SecurityException se) {
-			System.out.println("Permission issue: " + se.getMessage());
-		}  
-
-		if (screenshotDirectory.exists() && screenshotDirectory.canWrite()) {
-			File screenshot = new File(screenshotDirectory, screenshotName + ".png");
-        try (FileOutputStream out = new FileOutputStream(screenshot)) {
-            out.write(sourcePath);
-            System.out.println("Written screenshot to " + screenshot.getAbsolutePath());
-        } catch (IOException e) {
-            e.printStackTrace();
-            System.out.println("Failed to write screenshot to disk: " + e.getMessage());
-        }
-		} else {
-			System.out.println("Directory does not exist or is not writable");
 		}
-        
-        
-    }
+	}
 }
+// 	@After(order = 1)
+// public void tearDown(Scenario scenario) throws InterruptedException, IOException {
+//     if (scenario.isFailed()) {
+//         // take screenshot:
+//         String screenshotName = scenario.getName().replaceAll(" ", "_");
+//         byte[] sourcePath = ((TakesScreenshot) BaseClass.getDriver()).getScreenshotAs(OutputType.BYTES);
 
-	
-}
+//         // Save the screenshot in your directory with custom name
+//         File screenshotDirectory = new File("test-output/SparkReport");
+//         if (!screenshotDirectory.exists()) {
+//             screenshotDirectory.mkdirs();
+//         }
+//         File screenshot = new File(screenshotDirectory, screenshotName + ".png");
+//         try (FileOutputStream out = new FileOutputStream(screenshot)) {
+//             out.write(sourcePath);
+//         }
+// 		// Read the saved screenshot as a byte array
+//         byte[] savedScreenshot = Files.readAllBytes(Paths.get(screenshot.getAbsolutePath()));
+
+//         // attach screenshot to scenario
+//         scenario.attach(savedScreenshot, "image/png", screenshotName);
+// 	}
+// }
+//}
         
 	
 

@@ -50,11 +50,6 @@ jobs:
           command: mvn verify
       - store_test_results:
          path: target/junit-reports/Cucumber.xml
-      - run:
-          name: Delete Specific Files
-          command: |
-            rm -fv ./test-output/SparkReport/embedded*.png
-          when: always
       - store_artifacts:
           path: test-output/SparkReport/
           destination: spark_report
