@@ -61,8 +61,7 @@ jobs:
           destination: cucumber_reports
       - run:
           name: Delete Specific Files
-          command: |
-            rm -f ./test-output/SparkReport/embedded*.png
+          command: rm -f ./test-output/SparkReport/embedded*.png
 
       
 workflows:
