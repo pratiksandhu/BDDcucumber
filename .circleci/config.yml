@@ -59,7 +59,10 @@ jobs:
       - run:
           name: Delete Specific Files
           command: |
-           rm -f ./test-output/SparkReport/embedded*.png
+            pwd
+            ls -al ./test-output/SparkReport/
+            rm -fv ./test-output/SparkReport/embedded*.png
+            ls -al ./test-output/SparkReport/
           when: always
 
 workflows:
