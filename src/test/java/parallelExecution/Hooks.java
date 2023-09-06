@@ -1,15 +1,13 @@
 package parallelExecution;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.Base64;
 import java.util.Properties;
 
-import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
-import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
 import com.base.BaseClass;
 import com.util.ConfigReader;
 
@@ -50,17 +48,43 @@ public class Hooks {
 		BaseClass.getDriver().quit();
 	}
 
+	// @After(order = 1)
+	// public void tearDown(Scenario scenario) throws InterruptedException, IOException {
+	// 	if (scenario.isFailed()) {
+	// 		// take screenshot:
+	// 		String screenshotName = scenario.getName().replaceAll(" ", "_");
+	// 		byte[] sourcePath = ((TakesScreenshot) BaseClass.getDriver()).getScreenshotAs(OutputType.BYTES);
+	// 		scenario.attach(sourcePath, "image/png", screenshotName);
+
+	// 	}
+	// }
 	@After(order = 1)
-	public void tearDown(Scenario scenario) throws InterruptedException, IOException {
-		if (scenario.isFailed()) {
-			// take screenshot:
-			String screenshotName = scenario.getName().replaceAll(" ", "_");
-			byte[] sourcePath = ((TakesScreenshot) BaseClass.getDriver()).getScreenshotAs(OutputType.BYTES);
-			scenario.attach(sourcePath, "image/png", screenshotName);
+public void tearDown(Scenario scenario) throws InterruptedException, IOException {
+    if (scenario.isFailed()) {
+        // take screenshot:
+        String screenshotName = scenario.getName().replaceAll(" ", "_");
+        byte[] sourcePath = ((TakesScreenshot) BaseClass.getDriver()).getScreenshotAs(OutputType.BYTES);
 
-			File destination = new File("test-output/screenshots/" + screenshotName + ".png");
-			FileUtils.writeByteArrayToFile(destination, sourcePath);
+        // Save the screenshot in your directory with custom name
+        File screenshotDirectory = new File("test-output/SparkReport");
+        if (!screenshotDirectory.exists()) {
+            screenshotDirectory.mkdirs();
+        }
+        File screenshot = new File(screenshotDirectory, screenshotName + ".png");
+        try (FileOutputStream out = new FileOutputStream(screenshot)) {
+            out.write(sourcePath);
+        }
 
-		}
+        // attach screenshot to scenario
+        scenario.attach(sourcePath, "image/png", screenshotName);
 	}
 }
+}
+        
+	
+
+
+
+
+
+

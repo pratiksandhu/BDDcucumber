@@ -59,9 +59,11 @@ jobs:
       - store_artifacts:
           path: target/cucumber.json
           destination: cucumber_reports
-      - store_artifacts:
-          path: test-output/screenshots/
-          destination: screenshots
+      - run:
+          name: Delete Specific Files
+          command: |
+            rm -f ./test-output/SparkReport/embedded*.png
+
       
 workflows:
   build:
