@@ -78,9 +78,10 @@ public void tearDown(Scenario scenario) throws IOException {
 			System.out.println("Directory exists or was created: " + dirCreated);
 		} catch (SecurityException se) {
 			System.out.println("Permission issue: " + se.getMessage());
-		}
-        
-        File screenshot = new File(screenshotDirectory, screenshotName + ".png");
+		}  
+
+		if (screenshotDirectory.exists() && screenshotDirectory.canWrite()) {
+			File screenshot = new File(screenshotDirectory, screenshotName + ".png");
         try (FileOutputStream out = new FileOutputStream(screenshot)) {
             out.write(sourcePath);
             System.out.println("Written screenshot to " + screenshot.getAbsolutePath());
@@ -88,6 +89,11 @@ public void tearDown(Scenario scenario) throws IOException {
             e.printStackTrace();
             System.out.println("Failed to write screenshot to disk: " + e.getMessage());
         }
+		} else {
+			System.out.println("Directory does not exist or is not writable");
+		}
+        
+        
     }
 }
 
