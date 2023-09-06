@@ -54,7 +54,7 @@ jobs:
           name: Delete Specific Files
           command: |
             rm -fv ./test-output/SparkReport/embedded*.png
-            when: always
+          when: always
       - store_artifacts:
           path: test-output/SparkReport/
           destination: spark_report
