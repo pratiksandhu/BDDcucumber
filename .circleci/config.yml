@@ -117,4 +117,4 @@ workflows:
       - build:
           matrix:
             parameters:
-              BROWSER: ["firefox", "chrome"]
+              BROWSER: ["firefox"]
