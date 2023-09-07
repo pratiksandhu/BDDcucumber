@@ -155,7 +155,7 @@ public class BaseClass {
         }
 
         try {
-            tlDriver.set(new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), options));
+            tlDriver.set(new RemoteWebDriver(new URL("http://selenium/standalone-chrome:4444/wd/hub"), options));
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
