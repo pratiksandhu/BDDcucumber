@@ -70,8 +70,8 @@ executors:
       - image: selenium/standalone-chrome:latest
       - image: selenium/standalone-firefox:latest  
     environment:
-     CHROME_HUB_URL: http://localhost:4444/wd/hub
-     FIREFOX_HUB_URL: http://localhost:4445/wd/hub 
+      CHROME_BIN: /usr/bin/google-chrome
+      FIREFOX_BIN: /usr/bin/firefox
 
 jobs:
   build:
@@ -117,4 +117,4 @@ workflows:
       - build:
           matrix:
             parameters:
-              BROWSER: ["chrome", "firefox"]
+              BROWSER: ["firefox", "chrome"]
