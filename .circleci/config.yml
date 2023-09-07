@@ -3,10 +3,11 @@ version: 2.1
 executors:
   maven-executor:
     docker:
-      - image: cimg/openjdk:11.0-browsers 
+      - image: cimg/openjdk:11.0-browsers
     environment:
       CHROME_BIN: /usr/bin/google-chrome
-      FIREFOX_BIN: /usr/bin/firefox  
+      FIREFOX_BIN: /usr/bin/firefox
+      TEST_BROWSER: firefox 
 
 jobs:
   build:
@@ -15,9 +16,8 @@ jobs:
       - checkout
 
       - run:
-         name: Set Timezone
-         command: echo 'export TZ="/usr/share/zoneinfo/America/Toronto"' >> $BASH_ENV
-
+          name: Set Timezone
+          command: echo 'export TZ="/usr/share/zoneinfo/America/Toronto"' >> $BASH_ENV
 
       - run:
           name: Update Packages
@@ -37,20 +37,11 @@ jobs:
             - ~/.m2
           key: v1-dependencies-{{ checksum "pom.xml" }}
 
-      # - run:
-      #     name: Install Chrome
-      #     command: |
-      #       sudo apt-get install -y wget
-      #       wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-      #       sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
-      #       sudo apt-get update
-      #       sudo apt-get install -y google-chrome-stable
-
       - run:
           name: Run Tests
-          command: mvn verify -Dbrowser=firefox  
+          command: mvn verify -Dbrowser=${TEST_BROWSER}
       - store_test_results:
-         path: target/junit-reports/Cucumber.xml
+          path: target/junit-reports/Cucumber.xml
       - store_artifacts:
           path: test-output/SparkReport/
           destination: spark_report
