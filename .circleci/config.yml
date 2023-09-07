@@ -7,7 +7,7 @@ executors:
     environment:
       CHROME_BIN: /usr/bin/google-chrome
       FIREFOX_BIN: /usr/bin/firefox
-      TEST_BROWSER: firefox 
+      TEST_BROWSER: chrome 
 
 jobs:
   build:
