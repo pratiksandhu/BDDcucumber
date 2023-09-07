@@ -1,5 +1,10 @@
 version: 2.1
 
+parameters:
+  browser_type:
+    type: string
+    default: "chrome"
+    
 executors:
   maven-executor:
     docker:
@@ -7,7 +12,7 @@ executors:
     environment:
       CHROME_BIN: /usr/bin/google-chrome
       FIREFOX_BIN: /usr/bin/firefox
-      TEST_BROWSER: chrome 
+      TEST_BROWSER: << pipeline.parameters.browser_type >>
 
 jobs:
   build:
