@@ -47,7 +47,7 @@ jobs:
 
       - run:
           name: Run Tests
-          command: mvn verify
+          command: mvn verify -Dbrowser=chrome  
       - store_test_results:
          path: target/junit-reports/Cucumber.xml
       - store_artifacts:
