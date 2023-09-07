@@ -6,6 +6,7 @@ executors:
       - image: cimg/openjdk:11.0-browsers 
     environment:
       CHROME_BIN: /usr/bin/google-chrome
+      FIREFOX_BIN: /usr/bin/firefox  
 
 jobs:
   build:
@@ -47,7 +48,7 @@ jobs:
 
       - run:
           name: Run Tests
-          command: mvn verify -Dbrowser=chrome  
+          command: mvn verify -Dbrowser=firefox  
       - store_test_results:
          path: target/junit-reports/Cucumber.xml
       - store_artifacts:
