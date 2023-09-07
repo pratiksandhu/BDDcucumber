@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="0" failed="3" skipped="0">
+<testng-results ignored="0" total="3" passed="1" failed="2" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-09-06T22:09:10Z" name="Surefire suite" finished-at="2023-09-06T22:09:40Z" duration-ms="29945">
+  <suite started-at="2023-09-07T03:44:36Z" name="Surefire suite" finished-at="2023-09-07T03:45:02Z" duration-ms="25871">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:parallelExecution.ParallelRun@4567f35d]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2023-09-06T22:09:10Z" name="Surefire test" finished-at="2023-09-06T22:09:40Z" duration-ms="29945">
+    <test started-at="2023-09-07T03:44:36Z" name="Surefire test" finished-at="2023-09-07T03:45:02Z" duration-ms="25871">
       <class name="parallelExecution.ParallelRun">
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:parallelExecution.ParallelRun@4567f35d]" started-at="2023-09-06T22:09:10Z" name="setUpClass" finished-at="2023-09-06T22:09:10Z" duration-ms="305" status="PASS">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:parallelExecution.ParallelRun@4567f35d]" started-at="2023-09-07T03:44:36Z" name="setUpClass" finished-at="2023-09-07T03:44:36Z" duration-ms="342" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:parallelExecution.ParallelRun@4567f35d]" started-at="2023-09-06T22:09:10Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-09-06T22:09:37Z" duration-ms="26416" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:parallelExecution.ParallelRun@4567f35d]" started-at="2023-09-07T03:44:36Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-09-07T03:44:43Z" duration-ms="6080" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -27,55 +27,10 @@
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.WebDriverException">
-            <message>
-              <![CDATA[A command failed due to an internal error: The remote session was terminated.
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'Pratiks-MacBook-Pro.local', ip: '2605:8d80:681:714e:536:6d4c:1a46:e44e%en0', os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '13.5.1', java.version: '11.0.19'
-Driver info: driver.version: SafariDriver
-remote stacktrace: ]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: A command failed due to an internal error: The remote session was terminated.
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'Pratiks-MacBook-Pro.local', ip: '2605:8d80:681:714e:536:6d4c:1a46:e44e%en0', os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '13.5.1', java.version: '11.0.19'
-Driver info: driver.version: SafariDriver
-remote stacktrace: 
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
-at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$errorHandler$0(W3CHandshakeResponse.java:62)
-at org.openqa.selenium.remote.HandshakeResponse.lambda$getResponseFunction$0(HandshakeResponse.java:30)
-at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$0(ProtocolHandshake.java:126)
-at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-at java.base/java.util.Spliterators$ArraySpliterator.tryAdvance(Spliterators.java:958)
-at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:127)
-at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:502)
-at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:488)
-at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
-at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150)
-at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:543)
-at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:128)
-at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
-at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:131)
-at org.openqa.selenium.safari.SafariDriver.<init>(SafariDriver.java:81)
-at org.openqa.selenium.safari.SafariDriver.<init>(SafariDriver.java:63)
-at org.openqa.selenium.safari.SafariDriver.<init>(SafariDriver.java:41)
-at com.base.BaseClass.init_driver(BaseClass.java:97)
-at parallelExecution.Hooks.launchBrowser(Hooks.java:41)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.WebDriverException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:parallelExecution.ParallelRun@4567f35d]" started-at="2023-09-06T22:09:10Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-09-06T22:09:37Z" duration-ms="26416" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:parallelExecution.ParallelRun@4567f35d]" started-at="2023-09-07T03:44:36Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-09-07T03:44:53Z" duration-ms="16238" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -88,55 +43,60 @@ at parallelExecution.Hooks.launchBrowser(Hooks.java:41)
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.SessionNotCreatedException">
+          <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[Could not create a session: The automation session ended unexpected while attempting to pair with it.
+              <![CDATA[Unable to locate element: //span[text()='Deas']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'Pratiks-MacBook-Pro.local', ip: '2605:8d80:681:714e:536:6d4c:1a46:e44e%en0', os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '13.5.1', java.version: '11.0.19'
-Driver info: driver.version: SafariDriver
-remote stacktrace: ]]>
+System info: host: 'Pratiks-MBP', ip: 'fe80:0:0:0:4d3:10f9:ec91:c1d1%en0', os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '13.5.1', java.version: '11.0.19'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 117.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20230824132758, moz:geckodriverVersion: 0.33.0, moz:headless: true, moz:platformVersion: 22.6.0, moz:processID: 83587, moz:profile: /var/folders/kl/x7sg3c3s7w5..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 3dc0766d-ba26-421e-99be-ce4b7de1c05e
+*** Element info: {Using=xpath, value=//span[text()='Deas']}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not create a session: The automation session ended unexpected while attempting to pair with it.
+              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to locate element: //span[text()='Deas']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'Pratiks-MacBook-Pro.local', ip: '2605:8d80:681:714e:536:6d4c:1a46:e44e%en0', os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '13.5.1', java.version: '11.0.19'
-Driver info: driver.version: SafariDriver
-remote stacktrace: 
+System info: host: 'Pratiks-MBP', ip: 'fe80:0:0:0:4d3:10f9:ec91:c1d1%en0', os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '13.5.1', java.version: '11.0.19'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 117.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20230824132758, moz:geckodriverVersion: 0.33.0, moz:headless: true, moz:platformVersion: 22.6.0, moz:processID: 83587, moz:profile: /var/folders/kl/x7sg3c3s7w5..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 3dc0766d-ba26-421e-99be-ce4b7de1c05e
+*** Element info: {Using=xpath, value=//span[text()='Deas']}
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
-at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$errorHandler$0(W3CHandshakeResponse.java:62)
-at org.openqa.selenium.remote.HandshakeResponse.lambda$getResponseFunction$0(HandshakeResponse.java:30)
-at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$0(ProtocolHandshake.java:126)
-at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-at java.base/java.util.Spliterators$ArraySpliterator.tryAdvance(Spliterators.java:958)
-at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:127)
-at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:502)
-at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:488)
-at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
-at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150)
-at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:543)
-at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:128)
-at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
-at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:131)
-at org.openqa.selenium.safari.SafariDriver.<init>(SafariDriver.java:81)
-at org.openqa.selenium.safari.SafariDriver.<init>(SafariDriver.java:63)
-at org.openqa.selenium.safari.SafariDriver.<init>(SafariDriver.java:41)
-at com.base.BaseClass.init_driver(BaseClass.java:97)
-at parallelExecution.Hooks.launchBrowser(Hooks.java:41)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.openqa.selenium.support.events.EventFiringWebDriver.lambda$new$1(EventFiringWebDriver.java:105)
+at com.sun.proxy.$Proxy21.findElement(Unknown Source)
+at org.openqa.selenium.support.events.EventFiringWebDriver.findElement(EventFiringWebDriver.java:194)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at com.sun.proxy.$Proxy24.click(Unknown Source)
+at com.pages.AfterSignInPage.deals(AfterSignInPage.java:26)
+at parallelExecution.AfterSignInStepDef.user_clicks_on_deals(AfterSignInStepDef.java:59)
+at ✽.user clicks on deals(file:///Users/pratiksandhu/eclipse-workspace/BDDCucumberLatest/src/test/resources/parallelExecution/AfterSignIn.feature:16)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.SessionNotCreatedException -->
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:parallelExecution.ParallelRun@4567f35d]" started-at="2023-09-06T22:09:10Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-09-06T22:09:37Z" duration-ms="26416" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:parallelExecution.ParallelRun@4567f35d]" started-at="2023-09-07T03:44:36Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-09-07T03:44:59Z" duration-ms="22381" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -149,55 +109,60 @@ at parallelExecution.Hooks.launchBrowser(Hooks.java:41)
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.SessionNotCreatedException">
+          <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[Could not create a session: The automation session ended unexpected while attempting to pair with it.
+              <![CDATA[Unable to locate element: //span[contains(text(),'Contacs')]
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'Pratiks-MacBook-Pro.local', ip: '2605:8d80:681:714e:536:6d4c:1a46:e44e%en0', os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '13.5.1', java.version: '11.0.19'
-Driver info: driver.version: SafariDriver
-remote stacktrace: ]]>
+System info: host: 'Pratiks-MBP', ip: 'fe80:0:0:0:4d3:10f9:ec91:c1d1%en0', os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '13.5.1', java.version: '11.0.19'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 117.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20230824132758, moz:geckodriverVersion: 0.33.0, moz:headless: true, moz:platformVersion: 22.6.0, moz:processID: 83589, moz:profile: /var/folders/kl/x7sg3c3s7w5..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 46331c95-3148-4884-aa4c-c73e8faad372
+*** Element info: {Using=xpath, value=//span[contains(text(),'Contacs')]}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not create a session: The automation session ended unexpected while attempting to pair with it.
+              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to locate element: //span[contains(text(),'Contacs')]
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'Pratiks-MacBook-Pro.local', ip: '2605:8d80:681:714e:536:6d4c:1a46:e44e%en0', os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '13.5.1', java.version: '11.0.19'
-Driver info: driver.version: SafariDriver
-remote stacktrace: 
+System info: host: 'Pratiks-MBP', ip: 'fe80:0:0:0:4d3:10f9:ec91:c1d1%en0', os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '13.5.1', java.version: '11.0.19'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 117.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20230824132758, moz:geckodriverVersion: 0.33.0, moz:headless: true, moz:platformVersion: 22.6.0, moz:processID: 83589, moz:profile: /var/folders/kl/x7sg3c3s7w5..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 46331c95-3148-4884-aa4c-c73e8faad372
+*** Element info: {Using=xpath, value=//span[contains(text(),'Contacs')]}
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
-at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$errorHandler$0(W3CHandshakeResponse.java:62)
-at org.openqa.selenium.remote.HandshakeResponse.lambda$getResponseFunction$0(HandshakeResponse.java:30)
-at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$0(ProtocolHandshake.java:126)
-at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-at java.base/java.util.Spliterators$ArraySpliterator.tryAdvance(Spliterators.java:958)
-at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:127)
-at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:502)
-at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:488)
-at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
-at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150)
-at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:543)
-at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:128)
-at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
-at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:131)
-at org.openqa.selenium.safari.SafariDriver.<init>(SafariDriver.java:81)
-at org.openqa.selenium.safari.SafariDriver.<init>(SafariDriver.java:63)
-at org.openqa.selenium.safari.SafariDriver.<init>(SafariDriver.java:41)
-at com.base.BaseClass.init_driver(BaseClass.java:97)
-at parallelExecution.Hooks.launchBrowser(Hooks.java:41)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.openqa.selenium.support.events.EventFiringWebDriver.lambda$new$1(EventFiringWebDriver.java:105)
+at com.sun.proxy.$Proxy21.findElement(Unknown Source)
+at org.openqa.selenium.support.events.EventFiringWebDriver.findElement(EventFiringWebDriver.java:194)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at com.sun.proxy.$Proxy24.isDisplayed(Unknown Source)
+at com.pages.ContactsPage.verifyContactsPage(ContactsPage.java:20)
+at parallelExecution.AfterSignInStepDef.contacts_page_is_opened(AfterSignInStepDef.java:52)
+at ✽.contacts page is opened(file:///Users/pratiksandhu/eclipse-workspace/BDDCucumberLatest/src/test/resources/parallelExecution/AfterSignIn.feature:11)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.SessionNotCreatedException -->
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:parallelExecution.ParallelRun@4567f35d]" started-at="2023-09-06T22:09:37Z" name="tearDownClass" finished-at="2023-09-06T22:09:40Z" duration-ms="3210" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:parallelExecution.ParallelRun@4567f35d]" started-at="2023-09-07T03:44:59Z" name="tearDownClass" finished-at="2023-09-07T03:45:02Z" duration-ms="3140" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

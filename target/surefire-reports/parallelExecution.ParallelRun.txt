@@ -1,28 +1,26 @@
 -------------------------------------------------------------------------------
 Test set: parallelExecution.ParallelRun
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 30.062 s <<< FAILURE! - in parallelExecution.ParallelRun
-runScenario(parallelExecution.ParallelRun)  Time elapsed: 26.421 s  <<< FAILURE!
-org.openqa.selenium.WebDriverException: 
-A command failed due to an internal error: The remote session was terminated.
+Tests run: 3, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 26.039 s <<< FAILURE! - in parallelExecution.ParallelRun
+runScenario(parallelExecution.ParallelRun)  Time elapsed: 16.242 s  <<< FAILURE!
+org.openqa.selenium.NoSuchElementException: 
+Unable to locate element: //span[text()='Deas']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'Pratiks-MacBook-Pro.local', ip: '2605:8d80:681:714e:536:6d4c:1a46:e44e%en0', os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '13.5.1', java.version: '11.0.19'
-Driver info: driver.version: SafariDriver
-remote stacktrace: 
+System info: host: 'Pratiks-MBP', ip: 'fe80:0:0:0:4d3:10f9:ec91:c1d1%en0', os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '13.5.1', java.version: '11.0.19'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 117.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20230824132758, moz:geckodriverVersion: 0.33.0, moz:headless: true, moz:platformVersion: 22.6.0, moz:processID: 83587, moz:profile: /var/folders/kl/x7sg3c3s7w5..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 3dc0766d-ba26-421e-99be-ce4b7de1c05e
+*** Element info: {Using=xpath, value=//span[text()='Deas']}
 
-runScenario(parallelExecution.ParallelRun)  Time elapsed: 26.421 s  <<< FAILURE!
-org.openqa.selenium.SessionNotCreatedException: 
-Could not create a session: The automation session ended unexpected while attempting to pair with it.
+runScenario(parallelExecution.ParallelRun)  Time elapsed: 22.391 s  <<< FAILURE!
+org.openqa.selenium.NoSuchElementException: 
+Unable to locate element: //span[contains(text(),'Contacs')]
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'Pratiks-MacBook-Pro.local', ip: '2605:8d80:681:714e:536:6d4c:1a46:e44e%en0', os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '13.5.1', java.version: '11.0.19'
-Driver info: driver.version: SafariDriver
-remote stacktrace: 
-
-runScenario(parallelExecution.ParallelRun)  Time elapsed: 26.421 s  <<< FAILURE!
-org.openqa.selenium.SessionNotCreatedException: 
-Could not create a session: The automation session ended unexpected while attempting to pair with it.
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'Pratiks-MacBook-Pro.local', ip: '2605:8d80:681:714e:536:6d4c:1a46:e44e%en0', os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '13.5.1', java.version: '11.0.19'
-Driver info: driver.version: SafariDriver
-remote stacktrace: 
+System info: host: 'Pratiks-MBP', ip: 'fe80:0:0:0:4d3:10f9:ec91:c1d1%en0', os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '13.5.1', java.version: '11.0.19'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 117.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20230824132758, moz:geckodriverVersion: 0.33.0, moz:headless: true, moz:platformVersion: 22.6.0, moz:processID: 83589, moz:profile: /var/folders/kl/x7sg3c3s7w5..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 46331c95-3148-4884-aa4c-c73e8faad372
+*** Element info: {Using=xpath, value=//span[contains(text(),'Contacs')]}
 
