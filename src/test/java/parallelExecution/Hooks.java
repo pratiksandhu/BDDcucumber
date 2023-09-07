@@ -1,10 +1,6 @@
 package parallelExecution;
 
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.Properties;
 
 import org.openqa.selenium.OutputType;
@@ -30,6 +26,7 @@ public class Hooks {
 	 * Assume.assumeTrue(false);;
 	 * }
 	 */
+
 	@Before(order = 0)
 	public void getProperty() {
 		configReader = new ConfigReader();
@@ -38,7 +35,8 @@ public class Hooks {
 
 	@Before(order = 1)
 	public void launchBrowser() {
-		String browserName = prop.getProperty("browser");
+		//String browserName = prop.getProperty("browser");
+		String browserName = System.getProperty("browser");
 		baseClass = new BaseClass();
 		baseClass.init_driver(browserName);
 
@@ -60,36 +58,32 @@ public class Hooks {
 
 		}
 	}
+
 }
-// 	@After(order = 1)
-// public void tearDown(Scenario scenario) throws InterruptedException, IOException {
-//     if (scenario.isFailed()) {
-//         // take screenshot:
-//         String screenshotName = scenario.getName().replaceAll(" ", "_");
-//         byte[] sourcePath = ((TakesScreenshot) BaseClass.getDriver()).getScreenshotAs(OutputType.BYTES);
+// @After(order = 1)
+// public void tearDown(Scenario scenario) throws InterruptedException,
+// IOException {
+// if (scenario.isFailed()) {
+// // take screenshot:
+// String screenshotName = scenario.getName().replaceAll(" ", "_");
+// byte[] sourcePath = ((TakesScreenshot)
+// BaseClass.getDriver()).getScreenshotAs(OutputType.BYTES);
 
-//         // Save the screenshot in your directory with custom name
-//         File screenshotDirectory = new File("test-output/SparkReport");
-//         if (!screenshotDirectory.exists()) {
-//             screenshotDirectory.mkdirs();
-//         }
-//         File screenshot = new File(screenshotDirectory, screenshotName + ".png");
-//         try (FileOutputStream out = new FileOutputStream(screenshot)) {
-//             out.write(sourcePath);
-//         }
-// 		// Read the saved screenshot as a byte array
-//         byte[] savedScreenshot = Files.readAllBytes(Paths.get(screenshot.getAbsolutePath()));
-
-//         // attach screenshot to scenario
-//         scenario.attach(savedScreenshot, "image/png", screenshotName);
-// 	}
+// // Save the screenshot in your directory with custom name
+// File screenshotDirectory = new File("test-output/SparkReport");
+// if (!screenshotDirectory.exists()) {
+// screenshotDirectory.mkdirs();
 // }
-//}
-        
-	
+// File screenshot = new File(screenshotDirectory, screenshotName + ".png");
+// try (FileOutputStream out = new FileOutputStream(screenshot)) {
+// out.write(sourcePath);
+// }
+// // Read the saved screenshot as a byte array
+// byte[] savedScreenshot =
+// Files.readAllBytes(Paths.get(screenshot.getAbsolutePath()));
 
-
-
-
-
-
+// // attach screenshot to scenario
+// scenario.attach(savedScreenshot, "image/png", screenshotName);
+// }
+// }
+// }

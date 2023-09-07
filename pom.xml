@@ -22,11 +22,11 @@
 	</properties>
 
 	<dependencies>
-<dependency>
-    <groupId>commons-io</groupId>
-    <artifactId>commons-io</artifactId>
-    <version>2.11.0</version>
-</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.11.0</version>
+		</dependency>
 
 		<dependency>
 			<groupId>io.cucumber</groupId>
@@ -116,8 +116,11 @@
 						<include>**/ParallelRun.java</include>
 					</includes>
 					<parallel>methods</parallel>
-					<!-- <threadCount>4</threadCount>  -->
+					<threadCount>5</threadCount>
 					<useUnlimitedThreads>true</useUnlimitedThreads>
+					<systemPropertyVariables>
+						<browser>${browser}</browser>
+					</systemPropertyVariables>
 				</configuration>
 			</plugin>
 			<!-- <plugin>
@@ -148,7 +151,8 @@
 							<threadCount>4</threadCount>
 							<perCoreThreadCount>true</perCoreThreadCount>
 							UNCOMMENT BELOW 3 LINES - To execute using forking or combination 
-								option <forkCount>2</forkCount> <reuseForks>true</reuseForks> <reportsDirectory>${project.build.directory}/failsafe-reports_${surefire.forkNumber}</reportsDirectory>
+								option <forkCount>2</forkCount> <reuseForks>true</reuseForks>
+			<reportsDirectory>${project.build.directory}/failsafe-reports_${surefire.forkNumber}</reportsDirectory>
 						</configuration>
 					</execution>
 				</executions>

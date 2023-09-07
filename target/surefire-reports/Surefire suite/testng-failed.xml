@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="1" parallel="methods" name="Failed suite [Surefire suite]" verbose="0">
-  <test thread-count="1" parallel="methods" name="Surefire test(failed)" verbose="0">
+<suite parallel="methods" name="Failed suite [Surefire suite]" verbose="0">
+  <test thread-count="5" parallel="methods" name="Surefire test(failed)" verbose="0">
     <classes>
       <class name="parallelExecution.ParallelRun">
         <methods>
-          <include name="runScenario" invocation-numbers="1 0"/>
+          <include name="runScenario" invocation-numbers="1 0 2"/>
           <include name="tearDownClass"/>
           <include name="setUpClass"/>
         </methods>
