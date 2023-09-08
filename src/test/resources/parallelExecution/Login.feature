@@ -1,5 +1,6 @@
+@Regression
 Feature: Crm login
-
+  
   Scenario: login into crm account
     Given user is on home page
     When user clicks on LogIN
