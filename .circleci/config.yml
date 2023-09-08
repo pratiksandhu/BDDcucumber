@@ -44,10 +44,10 @@ jobs:
 
       - run:
           name: Run Tests
-          command: circleci tests glob "src/test/resources/parallelExecution/**/*.feature"|\
-           circleci tests run\
-           --command="xargs -I {} mvn verify -Dbrowser=${TEST_BROWSER} -Dcucumber.features-{}"\
-           --verbose\
+          command: circleci tests glob "src/test/resources/parallelExecution/**/*.feature"| \
+           circleci tests run \
+           --command="xargs -I {} mvn verify -Dbrowser=${TEST_BROWSER} -Dcucumber.features-{}" \
+           --verbose \
            --split-by=timings
 
       - store_test_results:
