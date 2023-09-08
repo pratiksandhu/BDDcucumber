@@ -45,7 +45,7 @@ jobs:
       - run:
           name: Run Tests
           #command: circleci tests glob "src/test/resources/parallelExecution/**/*.feature" | circleci tests run --command="mvn verify -Dbrowser=${TEST_BROWSER}" --verbose --split-by=timings
-          command: circleci tests glob "src/test/resources/parallelExecution/**/*.feature" | circleci tests split --split-by=timings | xargs mvn test -Dcucumber.features="{}" -Dbrowser=${TEST_BROWSER}
+          command: circleci tests glob "src/test/resources/parallelExecution/**/*.feature" | circleci tests split --split-by=timings | xargs mvn verify -Dcucumber.features="{}" -Dbrowser=${TEST_BROWSER}
 
       - store_test_results:
           path: target/junit-reports/junit.xml
