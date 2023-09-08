@@ -47,7 +47,7 @@ jobs:
           command: circleci tests glob "src/test/resources/parallelExecution/**/*.feature" | circleci tests run --command="mvn verify -Dbrowser=${TEST_BROWSER}" --verbose --split-by=timings
 
       - store_test_results:
-          path: target/junit-reports/Cucumber.xml
+          path: target/junit-reports
       - store_artifacts:
           path: test-output/SparkReport/
           destination: spark_report
