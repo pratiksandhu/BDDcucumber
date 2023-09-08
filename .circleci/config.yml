@@ -54,6 +54,9 @@ jobs:
       - store_artifacts:
           path: PdfReport/ExtentPdf.pdf
           destination: pdf_reports
+      - store_artifacts:
+          path: target/junit-reports/junit.xml
+          destination: JUnit_xml
 
 workflows:
   build:
