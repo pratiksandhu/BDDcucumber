@@ -1,26 +1,28 @@
 -------------------------------------------------------------------------------
 Test set: parallelExecution.ParallelRun
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 25.045 s <<< FAILURE! - in parallelExecution.ParallelRun
-runScenario(parallelExecution.ParallelRun)  Time elapsed: 15.11 s  <<< FAILURE!
+Tests run: 3, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 26.531 s <<< FAILURE! - in parallelExecution.ParallelRun
+runScenario(parallelExecution.ParallelRun)  Time elapsed: 14.926 s  <<< FAILURE!
 org.openqa.selenium.NoSuchElementException: 
-Unable to locate element: //span[text()='Deas']
+no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='Deas']"}
+  (Session info: headless chrome=116.0.5845.140)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'Pratiks-MBP', ip: 'fe80:0:0:0:4d3:10f9:ec91:c1d1%en0', os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '13.5.1', java.version: '11.0.19'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 117.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20230824132758, moz:geckodriverVersion: 0.33.0, moz:headless: true, moz:platformVersion: 22.6.0, moz:processID: 97824, moz:profile: /var/folders/kl/x7sg3c3s7w5..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 162f181d-adc1-40d8-bb94-5c895e9336a7
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.140, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: /var/folders/kl/x7sg3c3s7w5...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52060}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8d02ed34e41098647a32d7f5bdf50e16
 *** Element info: {Using=xpath, value=//span[text()='Deas']}
 
-runScenario(parallelExecution.ParallelRun)  Time elapsed: 21.448 s  <<< FAILURE!
+runScenario(parallelExecution.ParallelRun)  Time elapsed: 20.763 s  <<< FAILURE!
 org.openqa.selenium.NoSuchElementException: 
-Unable to locate element: //span[contains(text(),'Contacs')]
+no such element: Unable to locate element: {"method":"xpath","selector":"//span[contains(text(),'Contacs')]"}
+  (Session info: headless chrome=116.0.5845.140)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'Pratiks-MBP', ip: 'fe80:0:0:0:4d3:10f9:ec91:c1d1%en0', os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '13.5.1', java.version: '11.0.19'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 117.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20230824132758, moz:geckodriverVersion: 0.33.0, moz:headless: true, moz:platformVersion: 22.6.0, moz:processID: 97825, moz:profile: /var/folders/kl/x7sg3c3s7w5..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: b6417ae5-4d65-4509-80c3-b7ebff161a13
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.140, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: /var/folders/kl/x7sg3c3s7w5...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52061}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 14836ddb6a803414c1845443e03a264d
 *** Element info: {Using=xpath, value=//span[contains(text(),'Contacs')]}
 

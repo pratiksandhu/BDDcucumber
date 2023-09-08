@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">Grasshopper Report</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Sep. 7, 2023 09:58:23 a.m.</span></a>
+<a href="#"><span class="badge badge-primary">Sep. 7, 2023 11:39:55 p.m.</span></a>
 </li>
 </ul>
 </div>
@@ -71,13 +71,13 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Sep. 7, 2023 09:58:23 a.m.</h3>
+<h3>Sep. 7, 2023 11:39:55 p.m.</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Sep. 7, 2023 09:58:44 a.m.</h3>
+<h3>Sep. 7, 2023 11:40:16 p.m.</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -167,7 +167,7 @@
 </div></div>
 <script>
 var timeline = {
-"test afterSignInPage":21.369,"Crm login":4.941
+"test afterSignInPage":20.684,"Crm login":4.217
 };
 </script>
 <div class="row">
@@ -269,7 +269,7 @@ eventsCount: 5,
           <div class="test-detail">
             <p class="name">test afterSignInPage</p>
             <p class="text-sm">
-              <span>09:58:23 a.m.</span> / <span>00:00:21:369</span>
+              <span>23:39:56 p.m.</span> / <span>00:00:20:684</span>
               <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
@@ -278,9 +278,9 @@ eventsCount: 5,
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-fail">test afterSignInPage</h5>
-<span class='badge badge-success'>09.07.2023 09:58:23</span>
-<span class='badge badge-danger'>09.07.2023 09:58:44</span>
-<span class='badge badge-default'>00:00:21:369</span>
+<span class='badge badge-success'>09.07.2023 23:39:56</span>
+<span class='badge badge-danger'>09.07.2023 23:40:16</span>
+<span class='badge badge-default'>00:00:20:684</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 </div>
 <div class="m-t-10 m-l-5"></div>
@@ -313,13 +313,14 @@ eventsCount: 5,
               <div class="step fail-bg" title="parallelExecution.AfterSignInStepDef.user_clicks_on_deals()">
                 <span>When user clicks on deals</span>
       <div>
-        <textarea disabled class="code-block">org.openqa.selenium.NoSuchElementException: Unable to locate element: //span[text()='Deas']
+        <textarea disabled class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='Deas']"}
+  (Session info: headless chrome=116.0.5845.140)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'Pratiks-MBP', ip: 'fe80:0:0:0:4d3:10f9:ec91:c1d1%en0', os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '13.5.1', java.version: '11.0.19'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 117.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20230824132758, moz:geckodriverVersion: 0.33.0, moz:headless: true, moz:platformVersion: 22.6.0, moz:processID: 97824, moz:profile: /var/folders/kl/x7sg3c3s7w5..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 162f181d-adc1-40d8-bb94-5c895e9336a7
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.140, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: /var/folders/kl/x7sg3c3s7w5...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52060}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8d02ed34e41098647a32d7f5bdf50e16
 *** Element info: {Using=xpath, value=//span[text()='Deas']}
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
@@ -340,11 +341,11 @@ Session ID: 162f181d-adc1-40d8-bb94-5c895e9336a7
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
 	at org.openqa.selenium.support.events.EventFiringWebDriver.lambda$new$1(EventFiringWebDriver.java:105)
-	at com.sun.proxy.$Proxy21.findElement(Unknown Source)
+	at com.sun.proxy.$Proxy22.findElement(Unknown Source)
 	at org.openqa.selenium.support.events.EventFiringWebDriver.findElement(EventFiringWebDriver.java:194)
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy24.click(Unknown Source)
+	at com.sun.proxy.$Proxy25.click(Unknown Source)
 	at com.pages.AfterSignInPage.deals(AfterSignInPage.java:26)
 	at parallelExecution.AfterSignInStepDef.user_clicks_on_deals(AfterSignInStepDef.java:59)
 	at ✽.user clicks on deals(file:///Users/pratiksandhu/eclipse-workspace/BDDCucumberLatest/src/test/resources/parallelExecution/AfterSignIn.feature:16)
@@ -402,13 +403,14 @@ Session ID: 162f181d-adc1-40d8-bb94-5c895e9336a7
               <div class="step fail-bg" title="parallelExecution.AfterSignInStepDef.contacts_page_is_opened()">
                 <span>Then contacts page is opened</span>
       <div>
-        <textarea disabled class="code-block">org.openqa.selenium.NoSuchElementException: Unable to locate element: //span[contains(text(),'Contacs')]
+        <textarea disabled class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[contains(text(),'Contacs')]"}
+  (Session info: headless chrome=116.0.5845.140)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'Pratiks-MBP', ip: 'fe80:0:0:0:4d3:10f9:ec91:c1d1%en0', os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '13.5.1', java.version: '11.0.19'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 117.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20230824132758, moz:geckodriverVersion: 0.33.0, moz:headless: true, moz:platformVersion: 22.6.0, moz:processID: 97825, moz:profile: /var/folders/kl/x7sg3c3s7w5..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: b6417ae5-4d65-4509-80c3-b7ebff161a13
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.140, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: /var/folders/kl/x7sg3c3s7w5...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52061}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 14836ddb6a803414c1845443e03a264d
 *** Element info: {Using=xpath, value=//span[contains(text(),'Contacs')]}
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
@@ -429,11 +431,11 @@ Session ID: b6417ae5-4d65-4509-80c3-b7ebff161a13
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
 	at org.openqa.selenium.support.events.EventFiringWebDriver.lambda$new$1(EventFiringWebDriver.java:105)
-	at com.sun.proxy.$Proxy21.findElement(Unknown Source)
+	at com.sun.proxy.$Proxy22.findElement(Unknown Source)
 	at org.openqa.selenium.support.events.EventFiringWebDriver.findElement(EventFiringWebDriver.java:194)
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy24.isDisplayed(Unknown Source)
+	at com.sun.proxy.$Proxy25.isDisplayed(Unknown Source)
 	at com.pages.ContactsPage.verifyContactsPage(ContactsPage.java:20)
 	at parallelExecution.AfterSignInStepDef.contacts_page_is_opened(AfterSignInStepDef.java:52)
 	at ✽.contacts page is opened(file:///Users/pratiksandhu/eclipse-workspace/BDDCucumberLatest/src/test/resources/parallelExecution/AfterSignIn.feature:11)
@@ -465,7 +467,7 @@ Session ID: b6417ae5-4d65-4509-80c3-b7ebff161a13
           <div class="test-detail">
             <p class="name">Crm login</p>
             <p class="text-sm">
-              <span>09:58:23 a.m.</span> / <span>00:00:04:941</span>
+              <span>23:39:56 p.m.</span> / <span>00:00:04:217</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -474,9 +476,9 @@ Session ID: b6417ae5-4d65-4509-80c3-b7ebff161a13
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-pass">Crm login</h5>
-<span class='badge badge-success'>09.07.2023 09:58:23</span>
-<span class='badge badge-danger'>09.07.2023 09:58:28</span>
-<span class='badge badge-default'>00:00:04:941</span>
+<span class='badge badge-success'>09.07.2023 23:39:56</span>
+<span class='badge badge-danger'>09.07.2023 23:40:00</span>
+<span class='badge badge-default'>00:00:04:217</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
 </div>
 <div class="m-t-10 m-l-5"></div>
@@ -558,7 +560,7 @@ Session ID: b6417ae5-4d65-4509-80c3-b7ebff161a13
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>09:58:23 a.m.</td>
+<td>23:39:56 p.m.</td>
 <td>
 <a href="#" class="linked" test-id='1' id='2'>test deals page</a>
 <div class="">
@@ -610,9 +612,9 @@ Session ID: b6417ae5-4d65-4509-80c3-b7ebff161a13
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>09:58:38 a.m.</td>
+<td>23:40:10 p.m.</td>
 <td>
-<a href="#" class="linked" test-id='1' id='21'>When user clicks on deals</a>
+<a href="#" class="linked" test-id='1' id='23'>When user clicks on deals</a>
 <div class="">
 <span class="badge badge-default">test afterSignInPage.test deals page.When user clicks on deals</span>
 </div>
@@ -620,7 +622,7 @@ Session ID: b6417ae5-4d65-4509-80c3-b7ebff161a13
 </tr>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>09:58:44 a.m.</td>
+<td>23:40:16 p.m.</td>
 <td>
 <a href="#" class="linked" test-id='1' id='27'>Then contacts page is opened</a>
 <div class="">
