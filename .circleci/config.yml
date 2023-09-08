@@ -42,12 +42,13 @@ jobs:
             - ~/.m2
           key: v1-dependencies-{{ checksum "pom.xml" }}
 
+      - run: mkdir -p ~/cucumber
       - run:
           name: Run Tests
-          command: circleci tests glob "src/test/resources/parallelExecution/**/*.feature" | circleci tests run --command="xargs -I {} mvn verify -Dbrowser=${TEST_BROWSER} -Dcucumber.features-{}" --verbose --split-by=timings
+          command: circleci tests glob "src/test/resources/parallelExecution/**/*.feature" | circleci tests run --command="xargs -I {} mvn verify -Dbrowser=${TEST_BROWSER} -Dcucumber.features-{} --format junit,fileattribute=true --out ~/cucumber/junit.xml" --verbose --split-by=timings
 
       - store_test_results:
-          path: target/junit-reports/junit.xml
+          path: ~/cucumber
       - store_artifacts:
           path: test-output/SparkReport/
           destination: spark_report
