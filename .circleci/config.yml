@@ -113,7 +113,7 @@ workflows:
   smoke_workflow:
     triggers:
       - schedule:
-          cron: "26 9 * * *"
+          cron: "36 9 * * *"
           filters:
             branches:
               only:
