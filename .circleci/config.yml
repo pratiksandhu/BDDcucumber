@@ -55,20 +55,20 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Check for New Commits
-          command: |
-            git fetch origin child
-            LAST_SUCCESSFUL_COMMIT=$(cat ~/last_successful_commit.txt || echo "")
-            CURRENT_COMMIT=$(git rev-parse origin/child)
-            echo "Last successful commit: $LAST_SUCCESSFUL_COMMIT"
-            echo "Current commit: $CURRENT_COMMIT"
-            if [ "$LAST_SUCCESSFUL_COMMIT" == "$CURRENT_COMMIT" ]; then
-              echo "No new commits. Terminating job."
-              circleci-agent step halt
-            else
-              echo "New commits found. Proceeding with the job."
-              echo $CURRENT_COMMIT > ~/last_successful_commit.txt
-            fi
+         name: Check for new commits in the last 24 hours
+         command: |
+                TIME_24_HOURS_AGO=$(date -u -d '24 hours ago' +%Y-%m-%d)
+                TIME_24_HOURS_AGO_EST=$(date -d "$TIME_24_HOURS_AGO UTC -5 hours" +%Y-%m-%dT%H:%M:%SZ)
+                LAST_COMMIT_TIME=$(git log -1 --pretty=format:%cd --date=iso)
+                LAST_COMMIT_TIME_EST=$(date -d "$LAST_COMMIT_TIME UTC -5 hours" +%Y-%m-%dT%H:%M:%SZ)
+                echo "Last commit time (EST): $LAST_COMMIT_TIME_EST"
+                echo "Time 24 hours ago (EST): $TIME_24_HOURS_AGO_EST"
+                if [[ "$LAST_COMMIT_TIME_EST" > "$TIME_24_HOURS_AGO_EST" ]]; then 
+                echo "New commits found. Proceeding with build."
+                else
+                  echo "No new commits in the last 24 hours. Exiting."
+                  circleci-agent step halt
+                fi
       - run:
           name: Set Timezone
           command: echo 'export TZ="/usr/share/zoneinfo/America/Toronto"' >> $BASH_ENV
@@ -100,10 +100,7 @@ jobs:
       - store_artifacts:
           path: target/junit-reports/junit.xml
           destination: JUnit_xml
-      - persist_to_workspace:
-          root: ~/
-          paths:
-            - last_successful_commit.txt
+      
 workflows:
   regression_workflow:
     jobs:
@@ -119,3 +116,6 @@ workflows:
           branches:
             only:
             - child
+    triggers:
+      - schedule:
+          cron: "42 8 * * *" 
