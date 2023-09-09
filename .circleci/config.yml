@@ -59,7 +59,7 @@ jobs:
           command: |
             git fetch origin child
             LAST_SUCCESSFUL_COMMIT=$(cat ~/last_successful_commit.txt || echo "")
-            CURRENT_COMMIT=$(git rev-parse origin/master)
+            CURRENT_COMMIT=$(git rev-parse origin/child)
             echo "Last successful commit: $LAST_SUCCESSFUL_COMMIT"
             echo "Current commit: $CURRENT_COMMIT"
             if [ "$LAST_SUCCESSFUL_COMMIT" == "$CURRENT_COMMIT" ]; then
