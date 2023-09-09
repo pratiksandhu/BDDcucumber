@@ -1,88 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-09-09T05:47:05Z" name="Surefire suite" finished-at="2023-09-09T05:47:30Z" duration-ms="24553">
+  <suite started-at="2023-09-09T06:12:03Z" name="Surefire suite" finished-at="2023-09-09T06:12:10Z" duration-ms="6869">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:parallelExecution.ParallelRun@4567f35d]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2023-09-09T05:47:05Z" name="Surefire test" finished-at="2023-09-09T05:47:30Z" duration-ms="24553">
+    <test started-at="2023-09-09T06:12:03Z" name="Surefire test" finished-at="2023-09-09T06:12:10Z" duration-ms="6869">
       <class name="parallelExecution.ParallelRun">
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:parallelExecution.ParallelRun@4567f35d]" started-at="2023-09-09T05:47:05Z" name="setUpClass" finished-at="2023-09-09T05:47:05Z" duration-ms="311" status="PASS">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:parallelExecution.ParallelRun@4567f35d]" started-at="2023-09-09T06:12:03Z" name="setUpClass" finished-at="2023-09-09T06:12:03Z" duration-ms="315" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:parallelExecution.ParallelRun@4567f35d]" started-at="2023-09-09T05:47:05Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-09-09T05:47:26Z" duration-ms="20650" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:parallelExecution.ParallelRun@4567f35d]" started-at="2023-09-09T06:12:03Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-09-09T06:12:07Z" duration-ms="3894" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["test contacts page"]]>
+                <![CDATA["login into crm account"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Optional[test afterSignInPage]"]]>
+                <![CDATA["Optional[Crm login]"]]>
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//span[contains(text(),'Contacs')]"}
-  (Session info: headless chrome=116.0.5845.179)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'Pratiks-MBP', ip: 'fe80:0:0:0:101c:8389:5eb:640e%en0', os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '13.5.2', java.version: '11.0.19'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.179, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: /var/folders/kl/x7sg3c3s7w5...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51469}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 0453064d0661810cdc89e8b11f9cc87a
-*** Element info: {Using=xpath, value=//span[contains(text(),'Contacs')]}]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[contains(text(),'Contacs')]"}
-  (Session info: headless chrome=116.0.5845.179)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'Pratiks-MBP', ip: 'fe80:0:0:0:101c:8389:5eb:640e%en0', os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '13.5.2', java.version: '11.0.19'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.179, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: /var/folders/kl/x7sg3c3s7w5...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51469}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 0453064d0661810cdc89e8b11f9cc87a
-*** Element info: {Using=xpath, value=//span[contains(text(),'Contacs')]}
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-at org.openqa.selenium.support.events.EventFiringWebDriver.lambda$new$1(EventFiringWebDriver.java:105)
-at com.sun.proxy.$Proxy21.findElement(Unknown Source)
-at org.openqa.selenium.support.events.EventFiringWebDriver.findElement(EventFiringWebDriver.java:194)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at com.sun.proxy.$Proxy24.isDisplayed(Unknown Source)
-at com.pages.ContactsPage.verifyContactsPage(ContactsPage.java:20)
-at parallelExecution.AfterSignInStepDef.contacts_page_is_opened(AfterSignInStepDef.java:52)
-at ✽.contacts page is opened(file:///Users/pratiksandhu/eclipse-workspace/BDDCucumberLatest/src/test/resources/parallelExecution/AfterSignIn.feature:12)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:parallelExecution.ParallelRun@4567f35d]" started-at="2023-09-09T05:47:26Z" name="tearDownClass" finished-at="2023-09-09T05:47:30Z" duration-ms="3581" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:parallelExecution.ParallelRun@4567f35d]" started-at="2023-09-09T06:12:07Z" name="tearDownClass" finished-at="2023-09-09T06:12:10Z" duration-ms="2651" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
