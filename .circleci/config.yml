@@ -116,12 +116,12 @@ workflows:
             branches:
               only:
                 - child
-    triggers:
-      - schedule:
-          cron: "55 8 * * *" 
-          filters:
-            branches:
-             only:
-              - child
+    # triggers:
+    #   - schedule:
+    #       cron: "55 8 * * *" 
+    #       filters:
+    #         branches:
+    #          only:
+    #           - child
           
       
