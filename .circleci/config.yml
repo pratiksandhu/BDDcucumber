@@ -68,7 +68,7 @@ jobs:
               echo "New commits found. Proceeding with build."
             else
               echo "No new commits in the last 2 minutes. Exiting."
-              circleci-agent
+              circleci-agent step halt
             fi
       - run:
           name: Set Timezone
