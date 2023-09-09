@@ -106,23 +106,21 @@ workflows:
   regression_workflow:
     jobs:
       - build_regression:
-         filters:
-          branches:
-            only:
-            - master
+          filters:
+            branches:
+              only:
+                - master
   smoke_workflow:
-    jobs:
-     - build_smoke:
-         filters:
+    triggers:
+      - schedule:
+          cron: "26 9 * * *"
+          filters:
             branches:
               only:
                 - child
-    # triggers:
-    #   - schedule:
-    #       cron: "55 8 * * *" 
-    #       filters:
-    #         branches:
-    #          only:
-    #           - child
+    jobs:
+      - build_smoke
+         
+ 
           
       
