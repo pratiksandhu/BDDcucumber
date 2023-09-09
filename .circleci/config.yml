@@ -54,22 +54,22 @@ jobs:
     executor: maven-executor
     steps:
       - checkout
-      - run:
-          name: Check for new commits in the last 2 minutes
-          command: |
-            TIME_2_MINUTES_AGO_UTC=$(date -u -d '2 minutes ago' +%Y-%m-%dT%H:%M:%SZ)
-            TIME_2_MINUTES_AGO_EST=$(date -u -d "$TIME_2_MINUTES_AGO_UTC -5 hours" +%Y-%m-%dT%H:%M:%SZ)
-            LAST_COMMIT_TIME=$(git log -1 --pretty=format:%cd --date=iso-strict)
-            LAST_COMMIT_TIME_UTC=$(date -u -d "$LAST_COMMIT_TIME" +%Y-%m-%dT%H:%M:%SZ)
-            LAST_COMMIT_TIME_EST=$(date -u -d "$LAST_COMMIT_TIME_UTC -5 hours" +%Y-%m-%dT%H:%M:%SZ)
-            echo "Last commit time (EST): $LAST_COMMIT_TIME_EST"
-            echo "Time 2 minutes ago (EST): $TIME_2_MINUTES_AGO_EST"
-            if [[ "$LAST_COMMIT_TIME_EST" > "$TIME_2_MINUTES_AGO_EST" ]]; then 
-              echo "New commits found. Proceeding with build."
-            else
-              echo "No new commits in the last 2 minutes. Exiting."
-              circleci-agent step halt
-            fi
+      # - run:
+      #     name: Check for new commits in the last 2 minutes
+      #     command: |
+      #       TIME_2_MINUTES_AGO_UTC=$(date -u -d '2 minutes ago' +%Y-%m-%dT%H:%M:%SZ)
+      #       TIME_2_MINUTES_AGO_EST=$(date -u -d "$TIME_2_MINUTES_AGO_UTC -5 hours" +%Y-%m-%dT%H:%M:%SZ)
+      #       LAST_COMMIT_TIME=$(git log -1 --pretty=format:%cd --date=iso-strict)
+      #       LAST_COMMIT_TIME_UTC=$(date -u -d "$LAST_COMMIT_TIME" +%Y-%m-%dT%H:%M:%SZ)
+      #       LAST_COMMIT_TIME_EST=$(date -u -d "$LAST_COMMIT_TIME_UTC -5 hours" +%Y-%m-%dT%H:%M:%SZ)
+      #       echo "Last commit time (EST): $LAST_COMMIT_TIME_EST"
+      #       echo "Time 2 minutes ago (EST): $TIME_2_MINUTES_AGO_EST"
+      #       if [[ "$LAST_COMMIT_TIME_EST" > "$TIME_2_MINUTES_AGO_EST" ]]; then 
+      #         echo "New commits found. Proceeding with build."
+      #       else
+      #         echo "No new commits in the last 2 minutes. Exiting."
+      #         circleci-agent step halt
+      #       fi
       - run:
           name: Set Timezone
           command: echo 'export TZ="/usr/share/zoneinfo/America/Toronto"' >> $BASH_ENV
@@ -113,7 +113,7 @@ workflows:
   smoke_workflow:
     triggers:
       - schedule:
-          cron: "36 9 * * *"
+          cron: "40 9 * * *"
           filters:
             branches:
               only:
