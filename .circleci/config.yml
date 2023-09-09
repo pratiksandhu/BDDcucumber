@@ -57,7 +57,7 @@ jobs:
       - run:
           name: Check for New Commits
           command: |
-            git fetch child
+            git fetch origin child
             LAST_SUCCESSFUL_COMMIT=$(cat ~/last_successful_commit.txt || echo "")
             CURRENT_COMMIT=$(git rev-parse origin/master)
             echo "Last successful commit: $LAST_SUCCESSFUL_COMMIT"
