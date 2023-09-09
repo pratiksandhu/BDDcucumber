@@ -15,41 +15,65 @@ executors:
       TEST_BROWSER: << pipeline.parameters.browser_type >>
 
 jobs:
-  build:
+  build_regression:
     executor: maven-executor
     steps:
       - checkout
-
       - run:
           name: Set Timezone
           command: echo 'export TZ="/usr/share/zoneinfo/America/Toronto"' >> $BASH_ENV
-
       - run:
           name: Update Packages
           command: sudo apt-get update
-
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "pom.xml" }}
             - v1-dependencies-
-
       - run:
           name: Install Dependencies
           command: mvn dependency:go-offline
-
       - save_cache:
           paths:
             - ~/.m2
           key: v1-dependencies-{{ checksum "pom.xml" }}
-
       - run:
-          name: Run Tests
-          command: circleci tests glob "src/test/resources/parallelExecution/**/*.feature"| \
-           circleci tests run \
-           --command="xargs -I {} mvn verify -Dbrowser=${TEST_BROWSER} -Dcucumber.features-{}" \
-           --verbose \
-           --split-by=timings
-
+          name: Run Regression Tests
+          command: circleci tests glob "src/test/resources/parallelExecution/**/*.feature" | circleci tests run --command="xargs -I {} mvn clean verify -Dbrowser=${TEST_BROWSER} -Dcucumber.features-{} -Dcucumber.filter.tags="@Regressiom"" --verbose --split-by=timings
+      - store_test_results:
+          path: target/junit-reports/junit.xml
+      - store_artifacts:
+          path: test-output/SparkReport/
+          destination: spark_report
+      - store_artifacts:
+          path: PdfReport/ExtentPdf.pdf
+          destination: pdf_reports
+      - store_artifacts:
+          path: target/junit-reports/junit.xml
+          destination: JUnit_xml
+  build_smoke:
+    executor: maven-executor
+    steps:
+      - checkout
+      - run:
+          name: Set Timezone
+          command: echo 'export TZ="/usr/share/zoneinfo/America/Toronto"' >> $BASH_ENV
+      - run:
+          name: Update Packages
+          command: sudo apt-get update
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "pom.xml" }}
+            - v1-dependencies-
+      - run:
+          name: Install Dependencies
+          command: mvn dependency:go-offline
+      - save_cache:
+          paths:
+            - ~/.m2
+          key: v1-dependencies-{{ checksum "pom.xml" }}
+      - run:
+          name: Run Regression Tests
+          command: circleci tests glob "src/test/resources/parallelExecution/**/*.feature" | circleci tests run --command="xargs -I {} mvn clean verify -Dbrowser=${TEST_BROWSER} -Dcucumber.features-{} -Dcucumber.filter.tags="@Regression or @Smoke"" --verbose --split-by=timings
       - store_test_results:
           path: target/junit-reports/junit.xml
       - store_artifacts:
@@ -63,6 +87,17 @@ jobs:
           destination: JUnit_xml
 
 workflows:
-  build:
+  regression_workflow:
     jobs:
-      - build
+      - build_regression:
+         filters:
+          branches:
+            only:
+            - master
+  smoke_workflow:
+    jobs:
+      - build_smoke:
+         filters:
+          branches:
+            only:
+            - child

@@ -17,10 +17,9 @@ import io.cucumber.testng.CucumberOptions;
 		},
 		monochrome=true,
 		dryRun=false
-		//tags="@Regression"
 		)
 
-public class Regression extends AbstractTestNGCucumberTests {
+public class ParallelRun extends AbstractTestNGCucumberTests {
 	@Override
 	@DataProvider(parallel = true)
 	public Object[][] scenarios() {
