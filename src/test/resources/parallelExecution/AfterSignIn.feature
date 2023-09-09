@@ -5,7 +5,7 @@ Feature: test afterSignInPage
       | username                   | password   |
       | pratiksandhu6162@gmail.com | Pratik@123 |
   
-  @Smoke @Regression
+  @Smoke 
   Scenario: test contacts page
     Given user is on AfterSignInPage
     When user clicks on contacts

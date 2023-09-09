@@ -55,6 +55,21 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Check for New Commits
+          command: |
+            git fetch child
+            LAST_SUCCESSFUL_COMMIT=$(cat ~/last_successful_commit.txt || echo "")
+            CURRENT_COMMIT=$(git rev-parse origin/master)
+            echo "Last successful commit: $LAST_SUCCESSFUL_COMMIT"
+            echo "Current commit: $CURRENT_COMMIT"
+            if [ "$LAST_SUCCESSFUL_COMMIT" == "$CURRENT_COMMIT" ]; then
+              echo "No new commits. Terminating job."
+              circleci-agent step halt
+            else
+              echo "New commits found. Proceeding with the job."
+              echo $CURRENT_COMMIT > ~/last_successful_commit.txt
+            fi
+      - run:
           name: Set Timezone
           command: echo 'export TZ="/usr/share/zoneinfo/America/Toronto"' >> $BASH_ENV
       - run:
@@ -73,7 +88,7 @@ jobs:
           key: v1-dependencies-{{ checksum "pom.xml" }}
       - run:
           name: Run Smoke Tests
-          command: circleci tests glob "src/test/resources/parallelExecution/**/*.feature" | circleci tests run --command="xargs -I {} mvn clean verify -Dbrowser=${TEST_BROWSER} -Dcucumber.features-{} -Dcucumber.filter.tags=\"@Regression and @Smoke\"" --verbose --split-by=timings
+          command: circleci tests glob "src/test/resources/parallelExecution/**/*.feature" | circleci tests run --command="xargs -I {} mvn clean verify -Dbrowser=${TEST_BROWSER} -Dcucumber.features-{} -Dcucumber.filter.tags=\"@Regression or @Smoke\"" --verbose --split-by=timings
       - store_test_results:
           path: target/junit-reports/junit.xml
       - store_artifacts:
@@ -85,7 +100,10 @@ jobs:
       - store_artifacts:
           path: target/junit-reports/junit.xml
           destination: JUnit_xml
-
+      - persist_to_workspace:
+          root: ~/
+          paths:
+            - last_successful_commit.txt
 workflows:
   regression_workflow:
     jobs:
