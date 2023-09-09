@@ -111,11 +111,17 @@ workflows:
             - master
   smoke_workflow:
     jobs:
-      - build_smoke:
+     - build_smoke:
          filters:
-          branches:
-            only:
-            - child
+            branches:
+              only:
+                - child
     triggers:
       - schedule:
-          cron: "42 8 * * *" 
+          cron: "55 8 * * *" 
+          filters:
+            branches:
+             only:
+              - child
+          
+      
