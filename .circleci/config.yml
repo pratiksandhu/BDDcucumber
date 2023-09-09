@@ -72,7 +72,7 @@ jobs:
             - ~/.m2
           key: v1-dependencies-{{ checksum "pom.xml" }}
       - run:
-          name: Run Regression Tests
+          name: Run Smoke Tests
           command: circleci tests glob "src/test/resources/parallelExecution/**/*.feature" | circleci tests run --command="xargs -I {} mvn clean verify -Dbrowser=${TEST_BROWSER} -Dcucumber.features-{} -Dcucumber.filter.tags="@Regression or @Smoke"" --verbose --split-by=timings
       - store_test_results:
           path: target/junit-reports/junit.xml
