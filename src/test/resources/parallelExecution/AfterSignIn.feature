@@ -11,7 +11,7 @@ Feature: test afterSignInPage
     When user clicks on contacts
     Then contacts page is opened
 
-  @Smoke
+  @Sanity
   Scenario: test deals page
     Given user is on AfterSignInPage
     When user clicks on deals
