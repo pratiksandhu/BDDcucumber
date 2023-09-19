@@ -118,16 +118,16 @@ workflows:
             branches:
               only:
                 - master
-  smoke_workflow:
-   triggers:
-    - schedule:
-       #cron: "2 9 * * *"
-       filters:
-        branches:
-          only:
-           - child
-   jobs:
-    - build_smoke
+  # smoke_workflow:
+  #  triggers:
+  #   - schedule:
+  #      #cron: "2 9 * * *"
+  #      filters:
+  #       branches:
+  #         only:
+  #          - child
+  #  jobs:
+  #   - build_smoke
     
          
  
