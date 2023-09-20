@@ -41,7 +41,9 @@ jobs:
           command: |
             FEATURES=$(circleci tests glob "src/test/resources/parallelExecution/**/*.feature")
             echo "Detected feature files: $FEATURES"
-            echo $FEATURES | tr ' ' '\n' | circleci tests run --command="xargs -I {} 'mvn clean verify -Dbrowser=${TEST_BROWSER} -Dcucumber.features={} -Dcucumber.filter.tags=\"@Regression or @Smoke\"'" --split-by=timings
+            for FEATURE in $FEATURES; do
+              mvn clean verify -Dbrowser=${TEST_BROWSER} -Dcucumber.features=$FEATURE -Dcucumber.filter.tags=\"@Regression or @Smoke\"
+            done
 
       - store_test_results:
           path: target/junit-reports/junit.xml
