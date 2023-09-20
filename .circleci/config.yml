@@ -38,7 +38,12 @@ jobs:
           key: v1-dependencies-{{ checksum "pom.xml" }}
       - run:
           name: Run Regression Tests
-          command: circleci tests glob "src/test/resources/parallelExecution/**/*.feature" | circleci tests run --command="mvn clean verify -Dbrowser=${TEST_BROWSER} -Dcucumber.filter.tags=\"@Smoke or @Regression\"" --verbose --split-by=timings       
+          command: |
+            FEATURES=$(circleci tests glob "src/test/resources/parallelExecution/**/*.feature") 
+            echo $FEATURES
+            echo $FEATURES | circleci tests run --command="xargs -I {} mvn clean verify -Dbrowser=${TEST_BROWSER} -Dcucumber.features={} -Dcucumber.filter.tags=\"@Regression\"" 
+            --verbose 
+            --split-by=timings       
       - store_test_results:
           path: target/junit-reports/junit.xml
       - store_artifacts:
