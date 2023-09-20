@@ -42,7 +42,7 @@ jobs:
             FEATURES=$(circleci tests glob "src/test/resources/parallelExecution/**/*.feature")
             echo "Detected feature files: $FEATURES"
             for FEATURE in $FEATURES; do
-              mvn clean verify -Dbrowser=${TEST_BROWSER} -Dcucumber.features=$FEATURE -Dcucumber.filter.tags="@Regression or @Smoke
+              mvn clean verify -Dbrowser=${TEST_BROWSER} -Dcucumber.features=$FEATURE -Dcucumber.filter.tags="@Regression or @Smoke"
             done
 
       - store_test_results:
