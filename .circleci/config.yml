@@ -39,8 +39,9 @@ jobs:
       - run:
           name: Run Regression Tests
           command: |
-            circleci tests glob "src/test/resources/parallelExecution/**/*.feature" |
-            circleci tests run --command="xargs -I {} mvn clean verify -Dbrowser=${TEST_BROWSER} -Dcucumber.features={} -Dcucumber.filter.tags=\"@Regression or @Smoke\"" 
+            FEATURES=$(circleci tests glob "src/test/resources/parallelExecution/**/*.feature") 
+            echo $FEATURES
+            echo $FEATURES | circleci tests run --command="xargs -I {} echo mvn clean verify -Dbrowser=${TEST_BROWSER} -Dcucumber.features={} -Dcucumber.filter.tags=\"@Regression or @Smoke\"" 
             --verbose 
             --split-by=timings       
       - store_test_results:
