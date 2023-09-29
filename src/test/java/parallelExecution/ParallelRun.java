@@ -7,7 +7,7 @@ import io.cucumber.testng.CucumberOptions;
 
 
 @CucumberOptions(
-		features = {"src/test/resources/parallelExecution"},
+		features = {},
 		glue = {"parallelExecution"},
 		plugin = {"pretty",
 				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
