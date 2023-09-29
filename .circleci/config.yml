@@ -43,7 +43,7 @@ jobs:
           name: Run Regression Tests
           command: |
            TEST_FILES=$(circleci tests glob "src/test/resources/parallelExecution/**/*.feature") 
-           echo "$TEST_FILES" | circleci tests run --command="xargs mvn clean verify -Dbrowser=${TEST_BROWSER}  -Dcucumber.filter.tags=\"@Regression or @Smoke\"" --verbose    
+           echo "$TEST_FILES" | circleci tests run --command="xargs -I {} mvn clean verify -Dbrowser=${TEST_BROWSER} -Dcucumber.features={} -Dcucumber.filter.tags=\"@Regression or @Smoke\"" --verbose    
       - store_test_results:
           path: target/junit-reports/junit.xml
       - store_artifacts:
