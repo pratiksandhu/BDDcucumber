@@ -117,7 +117,8 @@ workflows:
                 - child
   smoke_workflow:
    jobs:
-     - build_smoke
+     - build_smoke:
+          context: Staging
     
          
  
