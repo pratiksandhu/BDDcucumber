@@ -42,6 +42,12 @@ public class Hooks {
 
 	}
 
+	@Before(order=2)
+	public void getURL(){
+	 String testUrl = System.getProperty("url");
+	 BaseClass.getDriver().get(testUrl);
+	}
+
 	// for @after annotation, order=1 is executed first and then order=0 is executed
 	@After(order = 0)
 	public void quitBrowser() {

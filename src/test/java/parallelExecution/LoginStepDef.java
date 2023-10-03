@@ -21,7 +21,7 @@ public class LoginStepDef  {
 	
     @Given("^user is on home page$")
 	public void user_is_on_home_page() throws IOException{
-		BaseClass.getDriver().get(" https://freecrm.com/ ");
+		//BaseClass.getDriver().get(" https://freecrm.com/ ");
 	}
 
 	@When("^user clicks on LogIN$")

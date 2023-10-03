@@ -127,6 +127,7 @@
 					<useUnlimitedThreads>true</useUnlimitedThreads>
 					<systemPropertyVariables>
 						<browser>${browser}</browser>
+						<url>${url}</url>
 					</systemPropertyVariables>
 				</configuration>
 			</plugin>

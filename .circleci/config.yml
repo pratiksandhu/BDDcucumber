@@ -42,8 +42,7 @@ jobs:
       - run:
           name: Run Regression Tests
           command: |
-           TEST_FILES=$(circleci tests glob "src/test/resources/parallelExecution/**/*.feature") 
-           echo "$TEST_FILES" | circleci tests run --command="xargs -I {} mvn clean verify -Dbrowser=${TEST_BROWSER} -Dcucumber.features={} -Dcucumber.filter.tags=\"@Regression or @Smoke\"" --verbose    
+           circleci tests glob "src/test/resources/parallelExecution/**/*.feature" | circleci tests run --command="xargs -I {} mvn clean verify -Dbrowser=${TEST_BROWSER} -Durl=${Regression_url} -Dcucumber.features-{} -Dcucumber.filter.tags=\"@Regression\"" --verbose    
       - store_test_results:
           path: target/junit-reports/junit.xml
       - store_artifacts:
@@ -53,7 +52,7 @@ jobs:
           path: PdfReport/ExtentPdf.pdf
           destination: pdf_reports
       - store_artifacts:
-          path: ~/cucumber
+          path: target/junit-reports 
           destination: JUnit_xml
   build_smoke:
     executor: maven-executor
@@ -94,7 +93,7 @@ jobs:
           key: v1-dependencies-{{ checksum "pom.xml" }}
       - run:
           name: Run Smoke Tests
-          command: circleci tests glob "src/test/resources/parallelExecution/**/*.feature" | circleci tests run --command="xargs -I {} mvn clean verify -Dbrowser=${TEST_BROWSER} -Dcucumber.features-{} -Dcucumber.filter.tags=\"@Regression or @Smoke\"" --verbose --split-by=timings
+          command: circleci tests glob "src/test/resources/parallelExecution/**/*.feature" | circleci tests run --command="xargs -I {} mvn clean verify -Dbrowser=${TEST_BROWSER} -Durl=${Smoke_url} -Dcucumber.features-{} -Dcucumber.filter.tags=\"@Regression or @Smoke\"" --verbose --split-by=timings
       - store_test_results:
           path: target/junit-reports/junit.xml
       - store_artifacts:
@@ -111,20 +110,14 @@ workflows:
   regression_workflow:
     jobs:
       - build_regression:
+          context: Staging
           filters:
             branches:
               only:
                 - child
-  # smoke_workflow:
-  #  triggers:
-  #   - schedule:
-  #      #cron: "2 9 * * *"
-  #      filters:
-  #       branches:
-  #         only:
-  #          - child
-  #  jobs:
-  #   - build_smoke
+  smoke_workflow:
+   jobs:
+     - build_smoke
     
          
  
